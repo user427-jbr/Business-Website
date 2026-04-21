@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impressum - Power Apps Freelancer">
+    <title>Impressum - Power Apps Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo" title="Back to home">
+                    <span class="logo-icon">🧑🏽‍💻</span>
+                    <div class="logo-text">
+                        <span>Julius Bruch</span><br>
+                        <span>Power Apps, Power Automate & SharePoint</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
+                    <li><a href="index.html#services" class="nav-link" data-en="Services" data-de="Dienstleistungen">Services</a></li>
+                    <li><a href="index.html#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
+                    <li class="nav-lang-item">
+                        <button class="lang-toggle" id="langToggle" title="Toggle language">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <select class="lang-switch" id="langSwitch" style="display: none;">
+                            <option value="en">EN</option>
+                            <option value="de">GER</option>
+                        </select>
+                    </li>
+                </ul>
+                
+                <div class="nav-controls">
+                    <button class="lang-toggle-desktop" id="langToggleDesktop" title="Toggle language">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <select class="lang-switch-desktop" id="langSwitchDesktop" style="display: none;">
+                        <option value="en">EN</option>
+                        <option value="de">GER</option>
+                    </select>
+                </div>
+                
+                <!-- Hamburger Menu -->
+                <button class="hamburger" id="hamburger" title="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Legal Content -->
+    <section class="legal-content">
+        <div class="container">
+            <h1>Impressum</h1>
+            
+            <h2>Information according to § 5 TMG (Telemediengesetz)</h2>
+            
+            <h3>Responsible for Content:</h3>
+            <p>
+                <strong>Name:</strong> [Your Full Name]<br>
+                <strong>Address:</strong> [Your Street Address]<br>
+                <strong>City:</strong> [Your City] [Postal Code]<br>
+                <strong>Country:</strong> [Your Country]<br>
+                <strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a><br>
+                <strong>Phone:</strong> [Your Phone Number]
+            </p>
+
+            <h3>Professional Information:</h3>
+            <p>
+                <strong>Profession:</strong> Microsoft 365 Specialist / Power Apps Developer<br>
+                <strong>Regulated by:</strong> [Relevant Professional Body if applicable]<br>
+                <strong>Professional Liability Insurance:</strong> [Insurance Details if applicable]
+            </p>
+
+            <h3>Disclaimer (Haftungsausschluss):</h3>
+            <p>
+                The author assumes no liability for the correctness, accuracy, timeliness, reliability or completeness of the information. 
+                Liability claims regarding damage caused by the use of any information provided, including any kind of information which is incomplete or incorrect, will be rejected.
+            </p>
+
+            <h3>External Links:</h3>
+            <p>
+                This website contains links to external third-party websites. As the content of these third-party websites is beyond our control, 
+                we cannot assume any liability for this external content. The provider of the linked pages is always responsible for the content of those pages. 
+                At the time of linking, the linked pages were checked for possible violations of law. No illegal content was found at that time. 
+                A permanent monitoring of the content of linked pages cannot be reasonably expected without concrete indication of a violation of law. 
+                Upon notification of violations, we will immediately remove such links.
+            </p>
+
+            <h3>Copyright (Urheberrecht):</h3>
+            <p>
+                The content and works created by the site operators on these pages are subject to German copyright law. 
+                The duplication, processing, distribution and any kind of exploitation outside the limits of copyright law require the written consent of the author or creator. 
+                Downloads and copies of this site are only permitted for private, non-commercial use. 
+                Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. 
+                In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. 
+                Upon notification of violations, we will immediately remove such content.
+            </p>
+
+            <h3>Data Protection:</h3>
+            <p>
+                For information on data protection, please refer to our <a href="datenschutz.html">Data Protection Policy</a>.
+            </p>
+
+            <h3>Dispute Resolution:</h3>
+            <p>
+                The European Commission provides a platform for out-of-court dispute resolution (ODR platform) at https://ec.europa.eu/odr. 
+                However, I am not obligated to participate in dispute resolution proceedings before a consumer arbitration board.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Power Apps Solutions. All rights reserved. | Microsoft 365 Specialist</p>
+                <div class="footer-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Data Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .legal-content {
+            padding: 60px 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 70vh;
+        }
+
+        .legal-content h1 {
+            font-size: 2.5rem;
+            color: var(--purple-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .legal-content h2 {
+            font-size: 1.8rem;
+            color: var(--purple-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content h3 {
+            font-size: 1.3rem;
+            color: var(--purple-secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .legal-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .legal-content a {
+            color: var(--purple-primary);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
