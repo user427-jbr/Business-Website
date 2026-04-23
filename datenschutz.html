@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Data Privacy - Power Apps Freelancer">
-    <title>Data Privacy - Power Apps Solutions</title>
+    <meta name="description" content="GDPR-compliant data privacy policy for Power Apps and Microsoft 365 consulting services.">
+    <meta name="robots" content="index, follow">
+    <title>Data Privacy Policy (Datenschutzerklärung) - Power Apps Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://your-domain.com/datenschutz.html">
 </head>
 <body>
     <!-- Navigation -->
@@ -33,13 +35,22 @@
                     <li><a href="index.html#services" class="nav-link" data-en="Services" data-de="Dienstleistungen">Services</a></li>
                     <li><a href="index.html#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
                     <li><a href="index.html#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
+                    <li class="nav-lang-item">
+                        <button class="lang-toggle" id="langToggle" title="Toggle language">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                        <select class="lang-switch" id="langSwitch" style="display: none;">
+                            <option value="en">EN</option>
+                            <option value="de">GER</option>
+                        </select>
+                    </li>
                 </ul>
                 
                 <div class="nav-controls">
-                    <button class="lang-toggle" id="langToggle" title="Toggle language">
+                    <button class="lang-toggle-desktop" id="langToggleDesktop" title="Toggle language">
                         <i class="fas fa-globe"></i>
                     </button>
-                    <select class="lang-switch" id="langSwitch" style="display: none;">
+                    <select class="lang-switch-desktop" id="langSwitchDesktop" style="display: none;">
                         <option value="en">EN</option>
                         <option value="de">GER</option>
                     </select>
@@ -56,16 +67,16 @@
     <!-- Legal Content -->
     <section class="legal-content">
         <div class="container">
-            <h1>Data Privacy Policy</h1>
+            <h1 data-en="Data Privacy Policy" data-de="Datenschutzerklärung">Data Privacy Policy</h1>
             
-            <h2>1. Introduction and Overview</h2>
+            <h2 data-en="1. Introduction and Overview" data-de="1. Einleitung und Übersicht">1. Introduction and Overview</h2>
             <p>
                 This Data Privacy Policy explains what information we collect, how we use it, and what rights you have regarding your personal data. 
                 The protection of your personal data is very important to us. We process your data in compliance with the General Data Protection Regulation (GDPR).
             </p>
 
-            <h2>2. Responsible Party (Data Controller)</h2>
-            <p>
+            <h2 data-en="2. Responsible Party (Data Controller)" data-de="2. Verantwortliche Stelle (Verantwortlicher)">2. Responsible Party (Data Controller)</h2>
+            <p data-en="Name: [Your Full Name] Address: [Your Street Address] City: [Your City] [Postal Code] Email: your-email@example.com Phone: [Your Phone Number]" data-de="Name: [Your Full Name] Adresse: [Your Street Address] Stadt: [Your City] [Postal Code] Email: your-email@example.com Telefon: [Your Phone Number]">
                 <strong>Name:</strong> [Your Full Name]<br>
                 <strong>Address:</strong> [Your Street Address]<br>
                 <strong>City:</strong> [Your City] [Postal Code]<br>
@@ -73,72 +84,72 @@
                 <strong>Phone:</strong> [Your Phone Number]
             </p>
 
-            <h2>3. Data Processing</h2>
-            <p>
+            <h2 data-en="3. Data Processing" data-de="3. Datenverarbeitung">3. Data Processing</h2>
+            <p data-en="Personal data is only collected and processed to the extent necessary for the provision of services and to comply with legal obligations. We do not sell your personal data to third parties." data-de="Personenbezogene Daten werden nur insoweit erfasst und verarbeitet, wie dies zur Erbringung von Dienstleistungen und zur Einhaltung gesetzlicher Verpflichtungen erforderlich ist. Wir verkaufen Ihre personenbezogenen Daten nicht an Dritte.">
                 Personal data is only collected and processed to the extent necessary for the provision of services and to comply with legal obligations. 
                 We do not sell your personal data to third parties.
             </p>
 
-            <h2>4. Contact Form Data</h2>
-            <p>
+            <h2 data-en="4. Contact Form Data" data-de="4. Kontaktformular-Daten">4. Contact Form Data</h2>
+            <p data-en="When you use the contact form on our website, the data you enter is sent via email to our email address. The data is processed solely for the purpose of answering your inquiry. Your data will not be passed on to third parties. Your personal data will be deleted after your request has been processed." data-de="Wenn Sie das Kontaktformular auf unserer Website verwenden, werden die von Ihnen eingegebenen Daten per E-Mail an unsere E-Mail-Adresse gesendet. Die Daten werden ausschließlich zum Zweck der Beantwortung Ihrer Anfrage verarbeitet. Ihre Daten werden nicht an Dritte weitergegeben. Ihre personenbezogenen Daten werden gelöscht, nachdem Ihre Anfrage bearbeitet wurde.">
                 When you use the contact form on our website, the data you enter is sent via email to our email address. 
                 The data is processed solely for the purpose of answering your inquiry. Your data will not be passed on to third parties. 
                 Your personal data will be deleted after your request has been processed.
             </p>
 
-            <h2>5. Website Hosting</h2>
-            <p>
+            <h2 data-en="5. Website Hosting" data-de="5. Website-Hosting">5. Website Hosting</h2>
+            <p data-en="Our website is hosted on a server. The hoster may collect data about visitors to the website in so-called log files. This data includes: IP address, date and time of the request, time zone difference to Greenwich Mean Time (GMT), content of the request (specific page), access status / HTTP status code, amount of data transferred, website from which the request came, browser, operating system and similar information." data-de="Unsere Website wird auf einem Server gehostet. Der Hoster kann Daten über Besucher der Website in sogenannten Log-Dateien erfassen. Diese Daten umfassen: IP-Adresse, Datum und Uhrzeit der Anfrage, Zeitzonendifferenz zu Greenwich Mean Time (GMT), Inhalt der Anfrage (spezifische Seite), Zugriffsstatus / HTTP-Statuscode, Menge der übertragenen Daten, Website, von der die Anfrage kam, Browser, Betriebssystem und ähnliche Informationen.">
                 Our website is hosted on a server. The hoster may collect data about visitors to the website in so-called log files. 
                 This data includes: IP address, date and time of the request, time zone difference to Greenwich Mean Time (GMT), 
                 content of the request (specific page), access status / HTTP status code, amount of data transferred, 
                 website from which the request came, browser, operating system and similar information.
             </p>
 
-            <h2>6. Cookies and Tracking</h2>
-            <p>
+            <h2 data-en="6. Cookies and Tracking" data-de="6. Cookies und Tracking">6. Cookies and Tracking</h2>
+            <p data-en="This website uses cookies only for theme and language preferences, which are stored locally in your browser. No third-party tracking cookies are used. We do not use any analytics tools that track your behavior." data-de="Diese Website verwendet Cookies nur für Design- und Spracheinstellungen, die lokal in Ihrem Browser gespeichert werden. Es werden keine Tracking-Cookies von Drittanbietern verwendet. Wir verwenden keine Analysewerkzeuge, die Ihr Verhalten verfolgen.">
                 This website uses cookies only for theme and language preferences, which are stored locally in your browser. 
                 No third-party tracking cookies are used. We do not use any analytics tools that track your behavior.
             </p>
 
-            <h2>7. External Links</h2>
-            <p>
+            <h2 data-en="7. External Links" data-de="7. Externe Links">7. External Links</h2>
+            <p data-en="Our website contains links to external websites. We are not responsible for the data protection practices of these external websites. When you click on an external link, you leave our website and enter the external website's terms and conditions." data-de="Unsere Website enthält Links zu externen Websites. Wir sind nicht verantwortlich für die Datenschutzpraktiken dieser externen Websites. Wenn Sie auf einen externen Link klicken, verlassen Sie unsere Website und unterliegen den Bedingungen der externen Website.">
                 Our website contains links to external websites. We are not responsible for the data protection practices of these external websites. 
                 When you click on an external link, you leave our website and enter the external website's terms and conditions.
             </p>
 
-            <h2>8. Your Rights</h2>
-            <p>
+            <h2 data-en="8. Your Rights" data-de="8. Ihre Rechte">8. Your Rights</h2>
+            <p data-en="According to the GDPR, you have the following rights regarding your personal data:" data-de="Nach der GDPR haben Sie die folgenden Rechte in Bezug auf Ihre personenbezogenen Daten:">
                 According to the GDPR, you have the following rights regarding your personal data:
             </p>
             <ul style="margin-left: 2rem;">
-                <li><strong>Right of access:</strong> You can request information about what personal data we hold about you.</li>
-                <li><strong>Right to rectification:</strong> You can request that incorrect data be corrected.</li>
-                <li><strong>Right to erasure:</strong> You can request that your data be deleted ("right to be forgotten").</li>
-                <li><strong>Right to restrict processing:</strong> You can request that we limit how we use your data.</li>
-                <li><strong>Right to data portability:</strong> You can request that your data be provided to you in a structured format.</li>
-                <li><strong>Right to object:</strong> You can object to the processing of your data.</li>
+                <li data-en="Right of access: You can request information about what personal data we hold about you." data-de="Auskunftsrecht: Sie können Informationen darüber anfordern, welche personenbezogenen Daten wir über Sie speichern."><strong>Right of access:</strong> You can request information about what personal data we hold about you.</li>
+                <li data-en="Right to rectification: You can request that incorrect data be corrected." data-de="Recht auf Berichtigung: Sie können anfordern, dass falsche Daten berichtigt werden."><strong>Right to rectification:</strong> You can request that incorrect data be corrected.</li>
+                <li data-en="Right to erasure: You can request that your data be deleted (right to be forgotten)." data-de="Recht auf Löschung: Sie können anfordern, dass Ihre Daten gelöscht werden (Recht auf Vergessenwerden)."><strong>Right to erasure:</strong> You can request that your data be deleted ("right to be forgotten").</li>
+                <li data-en="Right to restrict processing: You can request that we limit how we use your data." data-de="Recht auf Einschränkung der Verarbeitung: Sie können anfordern, dass wir die Verwendung Ihrer Daten einschränken."><strong>Right to restrict processing:</strong> You can request that we limit how we use your data.</li>
+                <li data-en="Right to data portability: You can request that your data be provided to you in a structured format." data-de="Recht auf Datenportabilität: Sie können anfordern, dass Ihre Daten Ihnen in strukturierter Form bereitgestellt werden."><strong>Right to data portability:</strong> You can request that your data be provided to you in a structured format.</li>
+                <li data-en="Right to object: You can object to the processing of your data." data-de="Widerspruchsrecht: Sie können der Verarbeitung Ihrer Daten widersprechen."><strong>Right to object:</strong> You can object to the processing of your data.</li>
             </ul>
 
-            <h2>9. Data Security</h2>
-            <p>
+            <h2 data-en="9. Data Security" data-de="9. Datensicherheit">9. Data Security</h2>
+            <p data-en="We take the protection of your personal data very seriously. We use technical and organizational measures to protect your data from unauthorized access, alteration, disclosure, or destruction." data-de="Der Schutz Ihrer personenbezogenen Daten ist uns sehr wichtig. Wir verwenden technische und organisatorische Maßnahmen, um Ihre Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung zu schützen.">
                 We take the protection of your personal data very seriously. 
                 We use technical and organizational measures to protect your data from unauthorized access, alteration, disclosure, or destruction.
             </p>
 
-            <h2>10. Contact Information for Data Protection</h2>
-            <p>
+            <h2 data-en="10. Contact Information for Data Protection" data-de="10. Kontaktinformationen zum Datenschutz">10. Contact Information for Data Protection</h2>
+            <p data-en="If you have any questions about this Data Privacy Policy or wish to exercise your rights, please contact us at: Email: your-email@example.com" data-de="Wenn Sie Fragen zu dieser Datenschutzerklärung haben oder Ihre Rechte ausüben möchten, kontaktieren Sie uns bitte unter: Email: your-email@example.com">
                 If you have any questions about this Data Privacy Policy or wish to exercise your rights, please contact us at:<br>
                 <strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a>
             </p>
 
-            <h2>11. Changes to This Policy</h2>
-            <p>
+            <h2 data-en="11. Changes to This Policy" data-de="11. Änderungen dieser Richtlinie">11. Changes to This Policy</h2>
+            <p data-en="We may update this Data Privacy Policy from time to time. The most current version will always be available on this website." data-de="Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Die aktuelle Version ist immer auf dieser Website verfügbar.">
                 We may update this Data Privacy Policy from time to time. 
                 The most current version will always be available on this website.
             </p>
 
-            <h2>12. Supervisory Authority</h2>
-            <p>
+            <h2 data-en="12. Supervisory Authority" data-de="12. Aufsichtsbehörde">12. Supervisory Authority</h2>
+            <p data-en="If you believe that our processing of your personal data violates the GDPR, you have the right to lodge a complaint with the competent data protection authority in your country." data-de="Wenn Sie der Ansicht sind, dass unsere Verarbeitung Ihrer personenbezogenen Daten gegen die GDPR verstößt, haben Sie das Recht, bei der zuständigen Datenschutzbehörde in Ihrem Land eine Beschwerde einzureichen.">
                 If you believe that our processing of your personal data violates the GDPR, you have the right to lodge a complaint with the 
                 competent data protection authority in your country.
             </p>
@@ -149,7 +160,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Power Apps Solutions. All rights reserved. | Microsoft 365 Specialist</p>
+                <p>&copy; 2026 Power Apps Solutions. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="impressum.html">Impressum</a>
                     <a href="datenschutz.html">Data Privacy</a>
