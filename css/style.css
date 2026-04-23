@@ -273,6 +273,10 @@ body {
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .hero::before {
