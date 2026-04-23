@@ -696,16 +696,21 @@ body {
 
     .logo-text {
         white-space: normal;
+        line-height: 0.65;
     }
 
     .logo-text span:first-child {
         font-size: 1rem;
+        margin: 0;
+        padding: 0;
     }
 
     .logo-text span:nth-child(2) {
         font-size: 0.7rem;
         white-space: normal;
-        line-height: 1.1;
+        line-height: 0.85;
+        margin: 0;
+        padding: 0;
     }
 
     .hamburger {
