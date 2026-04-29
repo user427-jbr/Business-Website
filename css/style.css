@@ -341,19 +341,8 @@ body {
     margin: 0 auto;
 }
 
-.about-text {
-    min-width: 0;
-}
-
-.about-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    text-align: left;
-    margin-bottom: 1.5rem;
-}
-
 .profile-pic {
+    order: 1;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -364,6 +353,19 @@ body {
     color: white;
     font-size: 3rem;
     margin: 0 auto;
+}
+
+.about-text {
+    order: 2;
+    min-width: 0;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    text-align: left;
+    margin-bottom: 1.5rem;
 }
 
 .about-title {
@@ -856,23 +858,20 @@ body {
         margin: 0 auto;
     }
 
-    .about-text h2 {
-        font-size: 1.5rem;
-        text-align: left;
-        width: 100%;
-        margin-bottom: 0;
-    }
-
     .about-text p {
         font-size: 1rem;
         text-align: left;
         line-height: 1.6;
         width: 100%;
-        margin-bottom: 0;
     }
 
     .certifications-title {
-        text-align: center;
+        text-align: left;
+    }
+
+    .certificates {
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .services {
