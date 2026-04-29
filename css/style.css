@@ -88,14 +88,14 @@ body {
 }
 
 .logo-name {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     line-height: 1;
 }
 
 .logo-tagline {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 400;
     opacity: 0.9;
     letter-spacing: 0.2px;
@@ -852,8 +852,9 @@ body {
     }
 
     .profile-pic {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
         font-size: 4rem;
         margin: 0 auto;
     }
@@ -866,12 +867,17 @@ body {
     }
 
     .certifications-title {
-        text-align: left;
+        text-align: center;
     }
 
     .certificates {
         flex-direction: column;
         gap: 1rem;
+        justify-content: center;
+    }
+
+    .certificate-badge {
+        justify-content: center;
     }
 
     .services {
