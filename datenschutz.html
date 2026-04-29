@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="GDPR-compliant data privacy policy for Power Apps and Microsoft 365 consulting services.">
     <meta name="robots" content="index, follow">
     <title>Data Privacy Policy (Datenschutzerklärung) - Power Apps Solutions</title>
@@ -16,10 +16,9 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo" title="Back to home">
-                    <span class="logo-icon">🧑🏽‍💻</span>
-                    <div class="logo-text">
-                        <span>Julius Bruch</span><br>
-                        <span>Power Apps, Power Automate & SharePoint</span>
+                    <div class="logo-content">
+                        <div class="logo-name">Julius Bruch</div>
+                        <div class="logo-tagline">Power Apps & Digital Solutions</div>
                     </div>
                 </a>
                 
@@ -31,15 +30,15 @@
                 </button>
                 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
                     <li><a href="index.html#services" class="nav-link" data-en="Services" data-de="Dienstleistungen">Services</a></li>
                     <li><a href="index.html#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
                     <li><a href="index.html#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
                     <li class="nav-lang-item">
-                        <button class="lang-toggle" id="langToggle" title="Toggle language">
+                        <button class="lang-toggle" id="langToggleMobile" title="Toggle language">
                             <i class="fas fa-globe"></i>
                         </button>
-                        <select class="lang-switch" id="langSwitch" style="display: none;">
+                        <select class="lang-switch" id="langSwitchMobile" style="display: none;">
                             <option value="en">EN</option>
                             <option value="de">GER</option>
                         </select>
@@ -47,10 +46,10 @@
                 </ul>
                 
                 <div class="nav-controls">
-                    <button class="lang-toggle-desktop" id="langToggleDesktop" title="Toggle language">
+                    <button class="lang-toggle" id="langToggle" title="Toggle language">
                         <i class="fas fa-globe"></i>
                     </button>
-                    <select class="lang-switch-desktop" id="langSwitchDesktop" style="display: none;">
+                    <select class="lang-switch" id="langSwitch" style="display: none;">
                         <option value="en">EN</option>
                         <option value="de">GER</option>
                     </select>
@@ -168,60 +167,6 @@
             </div>
         </div>
     </footer>
-
-    <style>
-        .legal-content {
-            padding: 60px 0;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 70vh;
-        }
-
-        .legal-content h1 {
-            font-size: 2.5rem;
-            color: var(--purple-primary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .legal-content h2 {
-            font-size: 1.8rem;
-            color: var(--purple-primary);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .legal-content h3 {
-            font-size: 1.3rem;
-            color: var(--purple-secondary);
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .legal-content p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .legal-content ul {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .legal-content ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .legal-content a {
-            color: var(--purple-primary);
-            text-decoration: none;
-        }
-
-        .legal-content a:hover {
-            text-decoration: underline;
-        }
-    </style>
 
     <script src="js/script.js"></script>
 </body>
