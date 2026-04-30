@@ -499,6 +499,9 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .service-card:hover {
@@ -1152,6 +1155,15 @@ body {
     border-radius: 15px;
     font-size: 8rem;
     box-shadow: var(--card-shadow-hover);
+}
+
+.project-screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow-hover);
+    display: block;
+    margin: 0 auto;
 }
 
 .project-detail-body h2 {
