@@ -1,6 +1,6 @@
-# Power Apps Freelancer Portfolio
+# Julius Bruch - Power Apps Portfolio
 
-A modern, responsive portfolio website for Power Apps, Power Automate, and SharePoint services built with HTML, CSS, and JavaScript.
+A modern, responsive portfolio website for Julius Bruch, showcasing Power Apps, Power Automate, and SharePoint services built with HTML, CSS, and JavaScript.
 
 ## Project Structure
 
@@ -40,7 +40,7 @@ Business-Website/
 2. **Hero Section** - Eye-catching landing area with call-to-action
 3. **About Section** - Information about your expertise
 4. **Services Section** - Display your three main services with icons
-5. **Projects Section** - Sample projects and case studies
+5. **Projects Section** - Project portfolio showcasing Travel Expenses App, Project Management App, and Outlook Calendar Export App
 6. **Contact Section** - Call-to-action with mailto button and social links
 7. **Footer** - Copyright, Impressum, and Data Privacy links
 
