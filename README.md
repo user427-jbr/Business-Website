@@ -210,6 +210,12 @@ Ready to deploy? Popular options include:
 - SSL/TLS recommended for production (most hosting providers offer free SSL)
 - No external tracking or analytics by default
 
+### Contact Form
+This website uses a contact form managed by **Netlify Forms**:
+- Submissions automatically appear under the **Forms** tab in your Netlify dashboard.
+- Email notifications must be configured once in the Netlify dashboard: **Site configuration → Notifications → Emails and webhooks**.
+- **Important:** Renaming the form's `name="contact"` attribute in the HTML will orphan any existing submissions tied to the old name.
+
 ## Troubleshooting
 
 ### Theme Toggle Not Working

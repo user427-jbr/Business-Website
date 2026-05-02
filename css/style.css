@@ -510,6 +510,49 @@ body {
     border-color: var(--purple-primary);
 }
 
+.service-card:focus-visible {
+    outline: 2px solid var(--purple-primary);
+    outline-offset: 4px;
+}
+
+/* Contact Form */
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: grid;
+    gap: 0.35rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    padding: 0.65rem 0.8rem;
+    width: 100%;
+    font: inherit;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.contact-form .hp {
+    position: absolute;
+    left: -10000px;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.cta-button:focus-visible {
+    outline: 2px solid var(--purple-primary);
+    outline-offset: 2px;
+}
+
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1rem;

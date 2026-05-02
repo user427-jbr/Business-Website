@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://your-domain.com/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <title>Power Apps & SharePoint Freelancer | Custom Microsoft 365 Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="canonical" href="https://your-domain.com/">
     <script type="application/ld+json">
@@ -192,7 +192,7 @@
                 </a>
                 <a href="project-2.html" class="project-card" title="View project details">
                     <div class="project-icon">📅</div>
-                    <h3 data-en="Calendar Export App" data-de="Kalender Export App">Outlook Calendar Export App</h3>
+                    <h3 data-en="Calendar Export App" data-de="Kalender Export App">Calendar Export App</h3>
                     <p data-en="Power App that retrieves calendar events from Outlook, exports appointments to CSV format, and includes search functionality to filter events by keywords in title, description, and location. Perfect for calendar analysis and reporting." data-de="Power App, die Kalendertermine aus Outlook abruft, Termine in CSV-Format exportiert und eine Suchfunktion zum Filtern nach Schlüsselwörtern in Titel, Beschreibung und Ort bietet. Ideal für Kalenderanalysen und Berichte.">Power App that retrieves calendar events from Outlook, exports appointments to CSV format, and includes search functionality to filter events by keywords in title, description, and location. Perfect for calendar analysis and reporting.</p>
                 </a>
             </div>
@@ -204,7 +204,22 @@
         <div class="container">
             <h2 data-en="Get In Touch" data-de="Kontaktieren Sie mich">Get In Touch</h2>
             <p data-en="Ready to start your project? Feel free to reach out!" data-de="Bereit, Ihr Projekt zu starten? Kontaktieren Sie mich gerne!">Ready to start your project? Feel free to reach out!</p>
-            <a href="mailto:your-email@example.com" class="cta-button" data-en="Send Email" data-de="E-Mail senden">Send Email</a>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="contact-form">
+                <p class="hp" hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+                <label>
+                    <span data-en="Name" data-de="Name">Name</span>
+                    <input type="text" name="name" required />
+                </label>
+                <label>
+                    <span data-en="Email" data-de="E-Mail">Email</span>
+                    <input type="email" name="email" required />
+                </label>
+                <label>
+                    <span data-en="Message" data-de="Nachricht">Message</span>
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+                <button type="submit" class="cta-button" data-en="Send Message" data-de="Nachricht senden">Send Message</button>
+            </form>
             <div class="social-links">
                 <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn" class="social-icon">
                     <i class="fab fa-linkedin"></i>
@@ -228,8 +243,8 @@
             <div class="footer-content">
                 <p>&copy; 2026 Julius Bruch - Power Apps & Digital Solutions</p>
                 <div class="footer-links">
-                    <a href="impressum.html" rel="noopener" data-en="Impressum" data-de="Impressum">Impressum</a>
-                    <a href="datenschutz.html" rel="noopener" data-en="Data Privacy" data-de="Datenschutz">Data Privacy</a>
+                    <a href="impressum.html" data-en="Impressum" data-de="Impressum">Impressum</a>
+                    <a href="datenschutz.html" data-en="Data Privacy" data-de="Datenschutz">Data Privacy</a>
                 </div>
             </div>
         </div>
