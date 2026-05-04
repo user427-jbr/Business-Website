@@ -1,4 +1,4 @@
-# Julius Bruch - Power Apps Portfolio
+# Julius Bruch Digital Solutions
 
 A modern, responsive portfolio website for Julius Bruch, showcasing Power Apps, Power Automate, and SharePoint services built with HTML, CSS, and JavaScript.
 
@@ -59,7 +59,17 @@ Business-Website/
 ## Customization Guide
 
 ### Update Contact Information
-Replace all instances of `your-email@example.com` with your real email address in:
+
+<!--
+[PROMPT_SUGGESTION]Can we apply a subtle border or box shadow to the footer to make it pop against the white background?[/PROMPT_SUGGESTION]
+[PROMPT_SUGGESTION]How do I change the default dark mode 'gray' to be a slightly lighter shade so there's more contrast?[/PROMPT_SUGGESTION]
+-->
+
+<!--
+[PROMPT_SUGGESTION]Can we apply a subtle border or box shadow to the footer to make it pop against the white background?[/PROMPT_SUGGESTION]
+[PROMPT_SUGGESTION]How do I change the default dark mode 'gray' to be a slightly lighter shade so there's more contrast?[/PROMPT_SUGGESTION]
+-->
+Replace all instances of `info@jb-solutions.digital` with your real email address in:
 - `index.html` - Contact section mailto link
 - `impressum.html` - Contact details
 - `datenschutz.html` - Contact details
@@ -71,7 +81,7 @@ In `index.html`, update the social links section:
 <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
 <a href="https://github.com/yourprofile" target="_blank" title="GitHub">
 <a href="https://youtube.com/@yourprofile" target="_blank" title="YouTube">
-<a href="mailto:your-email@example.com" title="Email">
+<a href="mailto:info@jb-solutions.digital" title="Email">
 ```
 
 ### Dark Mode & Language Switching
@@ -209,12 +219,6 @@ Ready to deploy? Popular options include:
 - Impressum page for German/EU compliance
 - SSL/TLS recommended for production (most hosting providers offer free SSL)
 - No external tracking or analytics by default
-
-### Contact Form
-This website uses a contact form managed by **Netlify Forms**:
-- Submissions automatically appear under the **Forms** tab in your Netlify dashboard.
-- Email notifications must be configured once in the Netlify dashboard: **Site configuration → Notifications → Emails and webhooks**.
-- **Important:** Renaming the form's `name="contact"` attribute in the HTML will orphan any existing submissions tied to the old name.
 
 ## Troubleshooting
 

@@ -6,6 +6,7 @@
     <meta name="description" content="Legal notice and imprint for Julius Bruch's Power Apps and Microsoft 365 consulting services.">
     <meta name="robots" content="index, follow">
     <title>Impressum | Julius Bruch</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- TODO: replace with real value before publishing — required by §5 TMG / GDPR -->
@@ -17,9 +18,10 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo" title="Back to home">
+                    <img src="images/logo.png" alt="Julius Bruch Logo" class="logo-image">
                     <div class="logo-content">
                         <div class="logo-name">Julius Bruch</div>
-                        <div class="logo-tagline">Power Apps & Digital Solutions</div>
+                        <div class="logo-tagline">Digital Solutions</div>
                     </div>
                 </a>
                 
@@ -36,6 +38,9 @@
                     <li><a href="index.html#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
                     <li><a href="index.html#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
                     <li class="nav-lang-item">
+                        <button class="theme-toggle" id="themeToggleMobile" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
                         <button class="lang-toggle" id="langToggleMobile" title="Toggle language">
                             <i class="fas fa-globe"></i>
                         </button>
@@ -47,6 +52,9 @@
                 </ul>
                 
                 <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                     <button class="lang-toggle" id="langToggle" title="Toggle language">
                         <i class="fas fa-globe"></i>
                     </button>
@@ -67,20 +75,24 @@
     <!-- Legal Content -->
     <section class="legal-content">
         <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Home" data-de="Zurück zur Startseite">Back to Home</span>
+            </a>
             <h1 data-en="Impressum" data-de="Impressum">Impressum</h1>
             
             <h2 data-en="Information according to § 5 TMG (Telemediengesetz)" data-de="Informationen gemäß § 5 TMG (Telemediengesetz)">Information according to § 5 TMG (Telemediengesetz)</h2>
             
             <h3 data-en="Responsible for Content:" data-de="Verantwortlich für den Inhalt:">Responsible for Content:</h3>
             <!-- TODO: replace with real value before publishing — required by §5 TMG / GDPR -->
-            <p data-en="Name: Julius Bruch Address: [Your Street Address] City: Leipzig [Postal Code] Country: Germany Email: your-email@example.com Phone: [Your Phone Number]" data-de="Name: Julius Bruch Adresse: [Your Street Address] Stadt: Leipzig [Postal Code] Land: Deutschland Email: your-email@example.com Telefon: [Your Phone Number]">
+            <p data-en="Name: Julius Bruch Address: [Your Street Address] City: Leipzig [Postal Code] Country: Germany Email: info@jb-solutions.digital Phone: [Your Phone Number]" data-de="Name: Julius Bruch Adresse: [Your Street Address] Stadt: Leipzig [Postal Code] Land: Deutschland Email: info@jb-solutions.digital Telefon: [Your Phone Number]">
                 <strong>Name:</strong> Julius Bruch<br>
                 <!-- TODO: replace with real value before publishing — required by §5 TMG / GDPR -->
                 <strong>Address:</strong> [Your Street Address]<br>
                 <strong>City:</strong> Leipzig [Postal Code]<br>
                 <strong>Country:</strong> Germany<br>
                 <!-- TODO: replace with real value before publishing — required by §5 TMG / GDPR -->
-                <strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a><br>
+                <strong>Email:</strong> <a href="mailto:info@jb-solutions.digital">info@jb-solutions.digital</a><br>
                 <!-- TODO: replace with real value before publishing — required by §5 TMG / GDPR -->
                 <strong>Phone:</strong> [Your Phone Number]
             </p>
@@ -133,7 +145,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Julius Bruch - Power Apps & Digital Solutions</p>
+                <p>&copy; 2026 Julius Bruch Digital Solutions</p>
                 <div class="footer-links">
                     <a href="impressum.html">Impressum</a>
                     <a href="datenschutz.html">Data Privacy</a>

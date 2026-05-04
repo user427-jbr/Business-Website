@@ -1,3 +1,39 @@
+// Theme Management
+const themeToggleDesktop = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const body = document.body;
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    updateThemeIcons('dark');
+}
+
+function toggleTheme() {
+    body.classList.toggle('dark-mode');
+    const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+    updateThemeIcons(currentTheme);
+}
+
+function updateThemeIcons(theme) {
+    const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
+    const removeClass = theme === 'dark' ? 'fa-moon' : 'fa-sun';
+    
+    [themeToggleDesktop, themeToggleMobile].forEach(btn => {
+        if (btn) {
+            const icon = btn.querySelector('i');
+            if (icon) {
+                icon.classList.remove(removeClass);
+                icon.classList.add(iconClass);
+            }
+        }
+    });
+}
+
+if (themeToggleDesktop) themeToggleDesktop.addEventListener('click', toggleTheme);
+if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
 // Language Management
 const html = document.documentElement;
 
@@ -156,19 +192,19 @@ const sections = document.querySelectorAll('section[id]');
 
 function updateActiveLink() {
     let current = '';
-    let minTop = Infinity;
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
     
     sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < minTop) {
-            minTop = rect.top;
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= (sectionTop - navbarHeight - 50)) {
             current = section.getAttribute('id');
         }
     });
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
+        if (current && link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
         }
     });
@@ -176,7 +212,3 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
-
-window.addEventListener('load', function () {
-    console.log('Website loaded successfully');
-});

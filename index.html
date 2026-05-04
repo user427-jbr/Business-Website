@@ -11,9 +11,11 @@
     <meta property="og:title" content="Power Apps & SharePoint Freelancer | Custom Microsoft 365 Solutions">
     <meta property="og:description" content="Master's student in Business Informatics at University of Leipzig. Expert Power Apps, Power Automate & SharePoint solutions. Based in Leipzig.">
     <meta property="og:url" content="https://your-domain.com">
-    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    <!-- TODO: Create a 1200x630px image for social previews and save it in the images folder -->
+    <meta property="og:image" content="https://your-domain.com/images/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <title>Power Apps & SharePoint Freelancer | Custom Microsoft 365 Solutions</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="canonical" href="https://your-domain.com/">
@@ -35,7 +37,7 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Julius Bruch - Power Apps Solutions Leipzig",
+      "name": "Julius Bruch Digital Solutions",
       "description": "Master's student in Business Informatics at University of Leipzig. Custom Power Apps, Power Automate and SharePoint solutions for businesses.",
       "url": "https://your-domain.com",
       "areaServed": "DE",
@@ -54,9 +56,10 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo" title="Back to home">
+                    <img src="images/logo.png" alt="Julius Bruch Logo" class="logo-image">
                     <div class="logo-content">
                         <div class="logo-name">Julius Bruch</div>
-                        <div class="logo-tagline">Power Apps & Digital Solutions</div>
+                        <div class="logo-tagline">Digital Solutions</div>
                     </div>
                 </a>
                 
@@ -73,6 +76,9 @@
                     <li><a href="#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
                     <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
                     <li class="nav-lang-item">
+                        <button class="theme-toggle" id="themeToggleMobile" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
                         <button class="lang-toggle" id="langToggleMobile" title="Toggle language">
                             <i class="fas fa-globe"></i>
                         </button>
@@ -84,6 +90,9 @@
                 </ul>
                 
                 <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                     <button class="lang-toggle" id="langToggle" title="Toggle language">
                         <i class="fas fa-globe"></i>
                     </button>
@@ -204,22 +213,7 @@
         <div class="container">
             <h2 data-en="Get In Touch" data-de="Kontaktieren Sie mich">Get In Touch</h2>
             <p data-en="Ready to start your project? Feel free to reach out!" data-de="Bereit, Ihr Projekt zu starten? Kontaktieren Sie mich gerne!">Ready to start your project? Feel free to reach out!</p>
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="contact-form">
-                <p class="hp" hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
-                <label>
-                    <span data-en="Name" data-de="Name">Name</span>
-                    <input type="text" name="name" required />
-                </label>
-                <label>
-                    <span data-en="Email" data-de="E-Mail">Email</span>
-                    <input type="email" name="email" required />
-                </label>
-                <label>
-                    <span data-en="Message" data-de="Nachricht">Message</span>
-                    <textarea name="message" rows="5" required></textarea>
-                </label>
-                <button type="submit" class="cta-button" data-en="Send Message" data-de="Nachricht senden">Send Message</button>
-            </form>
+            <a href="mailto:info@jb-solutions.digital" class="cta-button" data-en="Send Email" data-de="Email senden">Send Email</a>
             <div class="social-links">
                 <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn" class="social-icon">
                     <i class="fab fa-linkedin"></i>
@@ -241,7 +235,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Julius Bruch - Power Apps & Digital Solutions</p>
+                <p>&copy; 2026 Julius Bruch Digital Solutions</p>
                 <div class="footer-links">
                     <a href="impressum.html" data-en="Impressum" data-de="Impressum">Impressum</a>
                     <a href="datenschutz.html" data-en="Data Privacy" data-de="Datenschutz">Data Privacy</a>
