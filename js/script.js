@@ -1,6 +1,9 @@
+// Disable automatic scroll restoration to prevent page jump on load
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 // Theme Management
-const themeToggleDesktop = document.getElementById('themeToggle');
-const themeToggleMobile = document.getElementById('themeToggleMobile');
 const body = document.body;
 
 const savedTheme = localStorage.getItem('theme') || 'light';
@@ -20,75 +23,49 @@ function updateThemeIcons(theme) {
     const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
     const removeClass = theme === 'dark' ? 'fa-moon' : 'fa-sun';
     
-    [themeToggleDesktop, themeToggleMobile].forEach(btn => {
-        if (btn) {
-            const icon = btn.querySelector('i');
-            if (icon) {
-                icon.classList.remove(removeClass);
-                icon.classList.add(iconClass);
-            }
-        }
+    document.querySelectorAll('.theme-toggle i').forEach(icon => {
+        icon.classList.remove(removeClass);
+        icon.classList.add(iconClass);
     });
 }
 
-if (themeToggleDesktop) themeToggleDesktop.addEventListener('click', toggleTheme);
-if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', toggleTheme);
+});
 
 // Language Management
 const html = document.documentElement;
 
-// Get language elements
-const langSwitchDesktop = document.getElementById('langSwitch');
-const langToggleDesktop = document.getElementById('langToggle');
-const langSwitchMobile = document.getElementById('langSwitchMobile');
-const langToggleMobile = document.getElementById('langToggleMobile');
+const langSwitches = document.querySelectorAll('.lang-switch');
+const langToggles = document.querySelectorAll('.lang-toggle');
 
 const savedLanguage = localStorage.getItem('language') || 'en';
 
 // Initialize language
-if (langSwitchDesktop) langSwitchDesktop.value = savedLanguage;
-if (langSwitchMobile) langSwitchMobile.value = savedLanguage;
+langSwitches.forEach(sw => sw.value = savedLanguage);
 setLanguage(savedLanguage);
 
-// Desktop language toggle
-if (langToggleDesktop) {
-    langToggleDesktop.addEventListener('click', () => {
-        if (langSwitchDesktop) {
-            langSwitchDesktop.style.display = langSwitchDesktop.style.display === 'none' ? 'inline-block' : 'none';
-        }
+// Toggle language switch visibility
+langToggles.forEach((toggle, index) => {
+    toggle.addEventListener('click', () => {
+        const sw = langSwitches[index];
+        if (sw) sw.style.display = sw.style.display === 'none' ? 'inline-block' : 'none';
     });
-}
+});
 
-// Mobile language toggle
-if (langToggleMobile) {
-    langToggleMobile.addEventListener('click', () => {
-        if (langSwitchMobile) {
-            langSwitchMobile.style.display = langSwitchMobile.style.display === 'none' ? 'inline-block' : 'none';
-        }
-    });
-}
-
-// Desktop language change
-if (langSwitchDesktop) {
-    langSwitchDesktop.addEventListener('change', (e) => {
+// Handle language change
+langSwitches.forEach(langSwitch => {
+    langSwitch.addEventListener('change', (e) => {
         const selectedLang = e.target.value;
         localStorage.setItem('language', selectedLang);
         setLanguage(selectedLang);
-        langSwitchDesktop.style.display = 'none';
-        if (langSwitchMobile) langSwitchMobile.value = selectedLang;
+        
+        langSwitches.forEach(sw => {
+            sw.value = selectedLang;
+            sw.style.display = 'none';
+        });
     });
-}
-
-// Mobile language change
-if (langSwitchMobile) {
-    langSwitchMobile.addEventListener('change', (e) => {
-        const selectedLang = e.target.value;
-        localStorage.setItem('language', selectedLang);
-        setLanguage(selectedLang);
-        langSwitchMobile.style.display = 'none';
-        if (langSwitchDesktop) langSwitchDesktop.value = selectedLang;
-    });
-}
+});
 
 function setLanguage(lang) {
     document.querySelectorAll('[data-en][data-de]').forEach(element => {
@@ -166,6 +143,25 @@ document.querySelectorAll('.service-card, .project-card').forEach(card => {
     observer.observe(card);
 });
 
+// Observe sections for fade-in effect
+const sectionObserverOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, sectionObserverOptions);
+
+document.querySelectorAll('section:not(.hero) > .container').forEach(container => {
+    container.classList.add('section-fade-in');
+    sectionObserver.observe(container);
+});
+
 // Back to Top Button
 const scrollToTop = document.getElementById('scrollToTop');
 
@@ -201,6 +197,13 @@ function updateActiveLink() {
             current = section.getAttribute('id');
         }
     });
+    
+    // Check if we've scrolled to the very bottom of the page
+    if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 10) {
+        if (sections.length > 0) {
+            current = sections[sections.length - 1].getAttribute('id');
+        }
+    }
     
     navLinks.forEach(link => {
         link.classList.remove('active');
