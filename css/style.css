@@ -778,17 +778,39 @@ body.dark-mode .logo-image {
     gap: 2rem;
 }
 
-    .footer-social {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-    }
+.footer-left p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
 
-    .footer-social .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
-    }
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social-icon {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-social-icon:hover {
+    color: var(--purple-primary);
+    transform: scale(1.1) translateY(-3px);
+}
 
 .footer-links {
     display: flex;
@@ -1116,6 +1138,12 @@ section {
 
     .footer-content p {
         font-size: 0.9rem;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
     }
 
     .footer-links {

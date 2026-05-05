@@ -221,6 +221,7 @@ window.addEventListener('load', updateActiveLink);
 // Handle Contact Form Submission via AJAX
 const contactForm = document.getElementById('netlify-contact-form');
 const successMessage = document.getElementById('form-success-message');
+const sendAnotherBtn = document.getElementById('send-another-btn');
 
 if (contactForm && successMessage) {
     contactForm.addEventListener('submit', (e) => {
@@ -238,6 +239,7 @@ if (contactForm && successMessage) {
             if (response.ok) {
                 contactForm.style.display = 'none';
                 successMessage.style.display = 'block';
+                contactForm.reset();
             } else {
                 throw new Error('Form submission failed');
             }
@@ -247,4 +249,11 @@ if (contactForm && successMessage) {
             alert('There was a problem sending your message. Please try again later.');
         });
     });
+
+    if (sendAnotherBtn) {
+        sendAnotherBtn.addEventListener('click', () => {
+            successMessage.style.display = 'none';
+            contactForm.style.display = 'block';
+        });
+    }
 }
