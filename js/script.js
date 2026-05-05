@@ -131,6 +131,7 @@ const observer = new IntersectionObserver(function (entries) {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -153,6 +154,7 @@ const sectionObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            sectionObserver.unobserve(entry.target);
         }
     });
 }, sectionObserverOptions);
@@ -227,7 +229,7 @@ if (contactForm && successMessage) {
         const formData = new FormData(contactForm);
         const urlEncodedData = new URLSearchParams(formData).toString();
         
-        fetch('/', {
+        fetch(contactForm.getAttribute('action') || '/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: urlEncodedData
