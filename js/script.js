@@ -215,3 +215,34 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
+
+// Handle Contact Form Submission via AJAX
+const contactForm = document.getElementById('netlify-contact-form');
+const successMessage = document.getElementById('form-success-message');
+
+if (contactForm && successMessage) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const urlEncodedData = new URLSearchParams(formData).toString();
+        
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: urlEncodedData
+        })
+        .then(response => {
+            if (response.ok) {
+                contactForm.style.display = 'none';
+                successMessage.style.display = 'block';
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            alert('There was a problem sending your message. Please try again later.');
+        });
+    });
+}
