@@ -12,9 +12,3 @@
   package = "netlify-plugin-submit-sitemap"
   [plugins.inputs]
     sitemapPath = "/sitemap.xml"
-
-[[plugins]]
-  package = "netlify-plugin-minify-html"
-
-[[plugins]]
-  package = "@netlify/plugin-inline-critical-css"
