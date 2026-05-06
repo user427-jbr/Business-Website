@@ -663,6 +663,100 @@ body.dark-mode .logo-image {
     line-height: 1.6;
 }
 
+/* FAQ Section */
+.faq {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
+    background-color: var(--bg-primary);
+}
+
+.faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.faq-item {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--purple-primary);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover,
+.faq-item.active .faq-question {
+    color: var(--purple-primary);
+}
+
+.faq-question i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    color: var(--text-primary);
+}
+
+.faq-question:hover i,
+.faq-item.active .faq-question i {
+    color: var(--purple-primary);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background-color: var(--bg-primary);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 600px; /* Expands to show content smoothly */
+}
+
+.faq-answer-inner {
+    padding: 0 1.5rem 1.2rem;
+}
+
+.faq-answer-inner p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 /* Contact Section */
 .contact {
     min-height: 70vh;
@@ -832,8 +926,8 @@ body.dark-mode .logo-image {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     background: var(--purple-primary);
     color: #ffffff;
     border: none;
@@ -842,7 +936,7 @@ body.dark-mode .logo-image {
     display: none;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 999;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -917,21 +1011,6 @@ section {
 
     .logo {
         flex-basis: auto;
-    }
-
-    .logo-content {
-        gap: 0.1rem;
-    }
-
-    .logo-name {
-        font-size: 0.95rem;
-        font-weight: 700;
-        letter-spacing: 0.3px;
-    }
-
-    .logo-tagline {
-        font-size: 0.6rem;
-        letter-spacing: 0.1px;
     }
 
     .hamburger {
@@ -1108,6 +1187,14 @@ section {
         font-size: 0.95rem;
     }
 
+    .faq {
+        padding: 60px 0;
+    }
+
+    .faq h2 {
+        font-size: 2rem;
+    }
+
     .contact {
         padding: 60px 0;
     }
@@ -1162,34 +1249,15 @@ section {
     }
 
     .scroll-to-top {
-        width: 40px;
-        height: 40px;
+        width: 46px;
+        height: 46px;
         bottom: 20px;
         right: 20px;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        gap: 0;
-    }
-
-    .logo-content {
-        gap: 0.08rem;
-    }
-
-    .logo-name {
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 0.2px;
-    }
-
-    .logo-tagline {
-        font-size: 0.55rem;
-        letter-spacing: 0.05px;
-    }
-
     .hero {
         padding: 40px 0;
     }
@@ -1261,6 +1329,24 @@ section {
         width: 44px;
         height: 44px;
         font-size: 1.1rem;
+    }
+
+    .faq {
+        padding: 40px 0;
+    }
+
+    .faq h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .faq-answer-inner {
+        padding: 0 1.2rem 1rem;
     }
 
     .contact {

@@ -193,9 +193,14 @@ function updateActiveLink() {
     const navbar = document.querySelector('.navbar');
     const navbarHeight = navbar ? navbar.offsetHeight : 0;
     
+    // Calculate the position roughly 1/3 down the viewport to determine what the user is looking at
+    const scrollPosition = window.pageYOffset + navbarHeight + (window.innerHeight / 3);
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= (sectionTop - navbarHeight - 50)) {
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
             current = section.getAttribute('id');
         }
     });
@@ -218,10 +223,28 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
 
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    }
+});
+
 // Handle Contact Form Submission via AJAX
 const contactForm = document.getElementById('netlify-contact-form');
 const successMessage = document.getElementById('form-success-message');
-const sendAnotherBtn = document.getElementById('send-another-btn');
 
 if (contactForm && successMessage) {
     contactForm.addEventListener('submit', (e) => {
@@ -237,9 +260,13 @@ if (contactForm && successMessage) {
         })
         .then(response => {
             if (response.ok) {
-                contactForm.style.display = 'none';
                 successMessage.style.display = 'block';
                 contactForm.reset();
+                
+                // Auto-hide the success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
             } else {
                 throw new Error('Form submission failed');
             }
@@ -249,11 +276,4 @@ if (contactForm && successMessage) {
             alert('There was a problem sending your message. Please try again later.');
         });
     });
-
-    if (sendAnotherBtn) {
-        sendAnotherBtn.addEventListener('click', () => {
-            successMessage.style.display = 'none';
-            contactForm.style.display = 'block';
-        });
-    }
 }
