@@ -65,10 +65,6 @@ Business-Website/
 [PROMPT_SUGGESTION]How do I change the default dark mode 'gray' to be a slightly lighter shade so there's more contrast?[/PROMPT_SUGGESTION]
 -->
 
-<!--
-[PROMPT_SUGGESTION]Can we apply a subtle border or box shadow to the footer to make it pop against the white background?[/PROMPT_SUGGESTION]
-[PROMPT_SUGGESTION]How do I change the default dark mode 'gray' to be a slightly lighter shade so there's more contrast?[/PROMPT_SUGGESTION]
--->
 Replace all instances of `info@jb-solutions.digital` with your real email address in:
 - `index.html` - Contact section mailto link
 - `impressum.html` - Contact details
@@ -78,7 +74,7 @@ Replace all instances of `info@jb-solutions.digital` with your real email addres
 In `index.html`, update the social links section:
 
 ```html
-<a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+<a href="https://www.linkedin.com/in/julius-bruch-054296294" target="_blank" title="LinkedIn">
 <a href="https://github.com/yourprofile" target="_blank" title="GitHub">
 <a href="https://youtube.com/@yourprofile" target="_blank" title="YouTube">
 <a href="mailto:info@jb-solutions.digital" title="Email">

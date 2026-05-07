@@ -9,8 +9,8 @@ const body = document.body;
 const savedTheme = localStorage.getItem('theme') || 'light';
 if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
-    updateThemeIcons('dark');
 }
+updateThemeIcons(savedTheme);
 
 function toggleTheme() {
     body.classList.toggle('dark-mode');
@@ -110,7 +110,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             const navbar = document.querySelector('.navbar');
             const navbarHeight = navbar ? navbar.offsetHeight : 0;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
             
             window.scrollTo({
                 top: targetPosition,
@@ -176,7 +176,7 @@ if (scrollToTop) {
     });
     
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
+        if (window.scrollY > 300) {
             scrollToTop.classList.add('show');
         } else {
             scrollToTop.classList.remove('show');
@@ -194,7 +194,7 @@ function updateActiveLink() {
     const navbarHeight = navbar ? navbar.offsetHeight : 0;
     
     // Calculate the position roughly 1/3 down the viewport to determine what the user is looking at
-    const scrollPosition = window.pageYOffset + navbarHeight + (window.innerHeight / 3);
+    const scrollPosition = window.scrollY + navbarHeight + (window.innerHeight / 3);
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -206,7 +206,7 @@ function updateActiveLink() {
     });
     
     // Check if we've scrolled to the very bottom of the page
-    if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight - 10) {
+    if ((window.innerHeight + Math.ceil(window.scrollY)) >= document.body.offsetHeight - 10) {
         if (sections.length > 0) {
             current = sections[sections.length - 1].getAttribute('id');
         }
@@ -260,6 +260,18 @@ if (contactForm && successMessage) {
         })
         .then(response => {
             if (response.ok) {
+                // Trigger the Resend email via our secure Netlify function
+                fetch('/.netlify/functions/send-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        message: formData.get('message'),
+                        lang: localStorage.getItem('language') || 'en'
+                    })
+                }).catch(err => console.error('Failed to trigger email function:', err));
+
                 successMessage.style.display = 'block';
                 contactForm.reset();
                 
