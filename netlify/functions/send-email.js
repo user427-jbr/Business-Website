@@ -29,22 +29,22 @@ exports.handler = async function(event) {
             to: email, // Geht an die E-Mail des Nutzers, der das Formular ausgefüllt hat
             subject: subjectText,
             html: `
-                <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333333; background-color: #f4f4f4; padding: 30px 20px; margin: 0;">
-                    <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div style="background-color: #6A0DAD; color: #ffffff; padding: 25px 30px; text-align: center;">
+                <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333333; background-color: #ffffff; padding: 30px 20px; margin: 0;">
+                    <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 0; overflow: hidden; border: 1px solid #e0e0e0;">
+                        <div style="background-color: #000000; color: #ffffff; padding: 20px 30px; text-align: center;">
                             <h2 style="margin: 0; font-weight: 500; letter-spacing: 0.5px;">${titleText}</h2>
                         </div>
                         <div style="padding: 30px;">
                             <p style="margin-top: 0; font-size: 16px;">${greetingText}</p>
                             <p style="font-size: 16px;">${introText}</p>
                             
-                            <blockquote style="margin: 25px 0; padding: 15px 20px; background-color: #f9f9f9; border-left: 4px solid #6A0DAD; color: #555555; border-radius: 0 4px 4px 0; font-style: italic;">
+                            <blockquote style="margin: 25px 0; padding: 15px 20px; background-color: #f5f5f5; border-left: 4px solid #000000; color: #333333; border-radius: 0; font-style: italic;">
                                 ${message.replace(/\n/g, '<br>')}
                             </blockquote>
                             
-                            <p style="margin-bottom: 0; font-size: 16px;">${signOffText}</p>
+                            <p style="margin-bottom: 0; font-size: 16px;">${signOffText.replace(/#6A0DAD/g, '#000000')}</p>
                         </div>
-                        <div style="background-color: #fcfcfc; padding: 15px 30px; text-align: center; color: #888888; font-size: 12px; border-top: 1px solid #eeeeee;">
+                        <div style="background-color: #ffffff; padding: 15px 30px; text-align: center; color: #555555; font-size: 12px; border-top: 1px solid #e0e0e0;">
                             &copy; ${new Date().getFullYear()} Julius Bruch Digital Solutions.
                         </div>
                     </div>

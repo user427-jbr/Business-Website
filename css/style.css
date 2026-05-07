@@ -47,6 +47,7 @@ body {
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -284,7 +285,7 @@ body.dark-mode .contact-image {
 
 /* Hero Section */
 .hero {
-    min-height: calc(70vh - 74px);
+    min-height: calc(85vh - 74px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -399,17 +400,19 @@ body.dark-mode .contact-image {
 
 .profile-pic {
     order: 1;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background: var(--bg-secondary);
     border: 2px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-primary);
-    font-size: 3rem;
     margin: 0 auto;
+    overflow: hidden; /* Clips the image to the circle */
+    box-shadow: var(--card-shadow);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
 }
 
 .about-text {
@@ -435,7 +438,7 @@ body.dark-mode .contact-image {
 @media (min-width: 993px) {
     .about-content {
         display: grid;
-        grid-template-columns: 1fr 320px;
+        grid-template-columns: 1fr 350px;
         grid-template-rows: auto auto;
         gap: 2rem 3rem;
         align-items: start;
@@ -444,9 +447,8 @@ body.dark-mode .contact-image {
     .profile-pic {
         grid-column: 2;
         grid-row: 1 / 3;
-        width: 250px;
-        height: 250px;
-        font-size: 5rem;
+        width: 300px;
+        height: 300px;
         margin: 0;
     }
 
@@ -760,7 +762,6 @@ body.dark-mode .contact-image {
     min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 60px 0;
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
@@ -847,6 +848,31 @@ body.dark-mode .contact-image {
     padding: 14px 24px;
     font-size: 1.1rem;
     margin-top: 0.5rem;
+}
+
+/* Success Message Card */
+.success-message-card {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Ensure text inside is centered */
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.success-message-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Social Links */
@@ -1156,9 +1182,8 @@ body.dark-mode .contact-image {
 
     .profile-pic {
         width: 100%;
-        max-width: 300px;
-        height: 300px;
-        font-size: 4rem;
+        max-width: 320px;
+        height: 320px;
         margin: 0 auto;
     }
 
@@ -1304,9 +1329,8 @@ body.dark-mode .contact-image {
     }
 
     .profile-pic {
-        width: 100px;
-        height: 100px;
-        font-size: 2.5rem;
+        width: 140px;
+        height: 140px;
     }
 
     .about-text h2 {

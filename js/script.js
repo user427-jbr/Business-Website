@@ -272,15 +272,27 @@ if (contactForm && successMessage) {
                     })
                 }).catch(err => console.error('Failed to trigger email function:', err));
 
-                successMessage.style.display = 'block';
+                // Show success message with animation
+                successMessage.style.display = 'flex'; // Make it visible for animation
+                // Use a small timeout to ensure the display change is rendered before applying the transition
+                setTimeout(() => {
+                    successMessage.classList.add('is-visible');
+                }, 10); // A very small delay
+
+                contactForm.style.display = 'none'; // Hide the form
                 contactForm.reset();
                 
-                // Auto-hide the success message after 5 seconds
+                // Auto-hide the success message and show the form again after 7 seconds
                 setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 5000);
+                    successMessage.classList.remove('is-visible'); // Start fade-out animation
+                    // After the fade-out transition completes (0.5s), hide the element completely
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                        contactForm.style.display = 'block'; // Show the form again
+                    }, 500); // Match this with the CSS transition duration
+                }, 7000); // 7 seconds before starting to hide
             } else {
-                throw new Error('Form submission failed');
+                throw new Error(`Form submission failed with status: ${response.status}`);
             }
         })
         .catch(error => {
