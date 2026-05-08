@@ -164,25 +164,17 @@ document.querySelectorAll('section:not(.hero) > .container').forEach(container =
     sectionObserver.observe(container);
 });
 
-// Back to Top Button
-const scrollToTop = document.getElementById('scrollToTop');
-
-if (scrollToTop) {
-    scrollToTop.addEventListener('click', () => {
+// Back to Top Footer Link
+const scrollToTopFooterLinks = document.querySelectorAll('.back-to-top-footer');
+scrollToTopFooterLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent standard anchor jump
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollToTop.classList.add('show');
-        } else {
-            scrollToTop.classList.remove('show');
-        }
-    });
-}
+});
 
 // Active navigation link highlighting
 const navLinks = document.querySelectorAll('.nav-link');
