@@ -66,7 +66,7 @@
                 </a>
                 
                 <!-- Hamburger Menu -->
-                <button class="hamburger" id="hamburger" title="Toggle menu">
+                <button class="hamburger" id="hamburger" title="Toggle menu" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -79,10 +79,10 @@
                     <li><a href="#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
                     <li><a href="#faq" class="nav-link" data-en="FAQ" data-de="FAQ">FAQ</a></li>
                     <li class="nav-lang-item">
-                        <button class="theme-toggle" id="themeToggleMobile" title="Toggle theme">
+                        <button class="theme-toggle" id="themeToggleMobile" title="Toggle theme" aria-label="Toggle dark and light theme">
                             <i class="fas fa-moon"></i>
                         </button>
-                        <button class="lang-toggle" id="langToggleMobile" title="Toggle language">
+                        <button class="lang-toggle" id="langToggleMobile" title="Toggle language" aria-label="Toggle language between English and German">
                             <i class="fas fa-globe"></i>
                         </button>
                         <select class="lang-switch" id="langSwitchMobile" style="display: none;">
@@ -93,10 +93,10 @@
                 </ul>
                 
                 <div class="nav-controls">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark and light theme">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button class="lang-toggle" id="langToggle" title="Toggle language">
+                    <button class="lang-toggle" id="langToggle" title="Toggle language" aria-label="Toggle language between English and German">
                         <i class="fas fa-globe"></i>
                     </button>
                     <select class="lang-switch" id="langSwitch" style="display: none;">
@@ -128,7 +128,7 @@
             
             <div class="about-content">
                 <div class="profile-pic">
-                    <img src="images/profile-image.png  " alt="A professional headshot of Julius Bruch">
+                    <img src="images/profile-image.png" alt="A professional headshot of Julius Bruch">
                 </div>
 
                 <div class="about-text">
@@ -209,22 +209,22 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 data-en="Projects" data-de="Projekte">Projects</h2>
-            <p class="section-subtitle" data-en="Explore a selection of my recent work. Click on the projects below to learn more." data-de="Entdecken Sie eine Auswahl meiner aktuellen Arbeiten. Klicken Sie auf die Projekte unten, um mehr zu erfahren.">Explore a selection of my recent work. Click on the projects below to learn more.</p>
+            <p class="section-subtitle" data-en="Explore a selection of my recent work. See how custom Power Apps and Power Automate workflows solve complex business challenges. Click below to learn more." data-de="Entdecken Sie eine Auswahl meiner aktuellen Arbeiten. Sehen Sie, wie maßgeschneiderte Power Apps und Power Automate Workflows komplexe geschäftliche Herausforderungen lösen. Klicken Sie unten, um mehr zu erfahren.">Explore a selection of my recent work. See how custom Power Apps and Power Automate workflows solve complex business challenges. Click below to learn more.</p>
             <div class="projects-grid">
                 <a href="project-1.html" class="project-card" title="View project details">
                     <div class="project-icon">✈️</div>
                     <h3 data-en="Travel Expenses App" data-de="Reisekosten App">Travel Expenses App</h3>
-                    <p data-en="Automated travel expense approval workflow with integrated PDF report generation." data-de="Automatisierter Genehmigungs-Workflow für Reisekosten mit integrierter PDF-Berichterstellung.">Automated travel expense approval workflow with integrated PDF report generation.</p>
+                    <p data-en="Automated travel expense approval workflow with integrated PDF report generation for fast and compliant accounting." data-de="Automatisierter Genehmigungs-Workflow für Reisekosten mit integrierter PDF-Berichterstellung für eine schnelle und rechtskonforme Buchhaltung.">Automated travel expense approval workflow with integrated PDF report generation for fast and compliant accounting.</p>
                 </a>
                 <a href="project-3.html" class="project-card" title="View project details">
                     <div class="project-icon">📋</div>
                     <h3 data-en="Project Management App" data-de="Projektmanagement App">Project Management App</h3>
-                    <p data-en="Central dashboard connected to SharePoint for efficient project tracking and team collaboration." data-de="Zentrales Dashboard für effiziente Projektverfolgung und Teamzusammenarbeit über SharePoint.">Central dashboard connected to SharePoint for efficient project tracking and team collaboration.</p>
+                    <p data-en="Central dashboard connected to SharePoint for efficient project tracking, milestone management, and team collaboration." data-de="Zentrales Dashboard, verbunden mit SharePoint, für effiziente Projektverfolgung, Meilensteinverwaltung und Teamzusammenarbeit.">Central dashboard connected to SharePoint for efficient project tracking, milestone management, and team collaboration.</p>
                 </a>
                 <a href="project-2.html" class="project-card" title="View project details">
                     <div class="project-icon">📅</div>
                     <h3 data-en="Calendar Export App" data-de="Kalender Export App">Calendar Export App</h3>
-                    <p data-en="Power App to retrieve, filter, and export Outlook calendar events to CSV format for easy analysis." data-de="Power App zum Abrufen, Filtern und Exportieren von Outlook-Kalenderterminen ins CSV-Format für einfache Analysen.">Power App to retrieve, filter, and export Outlook calendar events to CSV format for easy analysis.</p>
+                    <p data-en="Power App to retrieve, filter, and export Outlook calendar events to CSV format via Microsoft Graph API integration." data-de="Power App zum Abrufen, Filtern und Exportieren von Outlook-Kalenderterminen ins CSV-Format über die Microsoft Graph API-Integration.">Power App to retrieve, filter, and export Outlook calendar events to CSV format via Microsoft Graph API integration.</p>
                 </a>
             </div>
         </div>
@@ -245,8 +245,8 @@
             <!-- Netlify Contact Form -->
             <form id="netlify-contact-form" class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/">
                 <input type="hidden" name="form-name" value="contact" />
-                <div style="display: none;">
-                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                <div style="display: none;" aria-hidden="true">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" tabindex="-1" /></label>
                 </div>
                 <div class="form-row">
                     <div class="form-group">

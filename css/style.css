@@ -350,7 +350,7 @@ body.dark-mode .contact-image {
     padding: 14px 36px;
     border-radius: 30px;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
     border: 2px solid var(--accent-primary);
     font-size: 1rem;
     cursor: pointer;
@@ -557,7 +557,7 @@ body.dark-mode .contact-image {
     padding: 2.5rem 2rem;
     border-radius: 16px;
     box-shadow: var(--card-shadow);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
     text-align: center;
     border: 1px solid var(--border-color);
     display: flex;
@@ -631,7 +631,7 @@ body.dark-mode .contact-image {
     padding: 2.5rem 2rem;
     border-radius: 16px;
     box-shadow: var(--card-shadow);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
     text-align: center;
     border: 1px solid var(--border-color);
     text-decoration: none;
@@ -1155,7 +1155,6 @@ body.dark-mode .contact-image {
     .nav-menu.active a {
         padding: 1rem 1.5rem;
         border-bottom: none;
-        display: block;
         min-height: 44px;
         display: flex;
         align-items: center;
@@ -1345,7 +1344,6 @@ body.dark-mode .contact-image {
 
 .footer-links a,
 .footer-center a {
-        display: block;
         padding: 0.5rem;
         min-height: 44px;
         display: flex;
