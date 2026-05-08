@@ -3,6 +3,41 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// Slow down hero video and create a "ping-pong" (forward-backward) loop
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+    heroVideo.playbackRate = 0.7; // Plays forward at 70% speed
+    
+    let isReversing = false;
+    let lastTime = 0;
+
+    heroVideo.addEventListener('ended', () => {
+        isReversing = true;
+        lastTime = performance.now();
+        requestAnimationFrame(reverseVideo);
+    });
+
+    function reverseVideo(now) {
+        if (!isReversing) return;
+
+        const delta = (now - lastTime) / 1000; // Time elapsed in seconds
+        lastTime = now;
+
+        // Cap delta in case the user switches tabs to prevent huge jumps
+        if (delta < 0.2) {
+            heroVideo.currentTime -= delta * 0.7;
+        }
+
+        if (heroVideo.currentTime <= 0.05) {
+            isReversing = false;
+            heroVideo.currentTime = 0;
+            heroVideo.play(); // Play forward again
+        } else {
+            requestAnimationFrame(reverseVideo);
+        }
+    }
+}
+
 // Theme Management
 const body = document.body;
 
