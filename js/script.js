@@ -6,7 +6,7 @@ if ('scrollRestoration' in history) {
 // Slow down hero video and create a "ping-pong" (forward-backward) loop
 const heroVideo = document.querySelector('.hero-video');
 if (heroVideo) {
-    heroVideo.playbackRate = 0.7; // Plays forward at 70% speed
+    heroVideo.playbackRate = 0.9; // Plays forward at 70% speed
     
     let isReversing = false;
     let lastTime = 0;
@@ -287,17 +287,30 @@ if (contactForm && successMessage) {
         })
         .then(response => {
             if (response.ok) {
-                // Trigger the Resend email via our secure Netlify function
-                fetch('/.netlify/functions/send-email', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: formData.get('name'),
-                        email: formData.get('email'),
-                        message: formData.get('message'),
-                        lang: localStorage.getItem('language') || 'en'
-                    })
-                }).catch(err => console.error('Failed to trigger email function:', err));
+                const lang = localStorage.getItem('language') || 'en';
+                const sendConfirmation = document.getElementById('send-confirmation');
+                const successHeading = successMessage.querySelector('h3');
+                
+                // Send confirmation email only if the user checked the option
+                if (sendConfirmation && sendConfirmation.checked) {
+                    fetch('/.netlify/functions/send-email', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: formData.get('name'),
+                            email: formData.get('email'),
+                            message: formData.get('message'),
+                            lang: lang
+                        })
+                    }).catch(err => console.error('Failed to trigger email function:', err));
+                    
+                    successHeading.setAttribute('data-en', 'Message sent successfully! A confirmation email has been sent to your inbox.');
+                    successHeading.setAttribute('data-de', 'Nachricht erfolgreich gesendet! Eine Bestätigungs-E-Mail wurde an Ihren Posteingang gesendet.');
+                } else {
+                    successHeading.setAttribute('data-en', 'Message sent successfully!');
+                    successHeading.setAttribute('data-de', 'Nachricht erfolgreich gesendet!');
+                }
+                successHeading.textContent = lang === 'en' ? successHeading.getAttribute('data-en') : successHeading.getAttribute('data-de');
 
                 // Show success message with animation
                 successMessage.style.display = 'flex'; // Make it visible for animation

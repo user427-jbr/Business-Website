@@ -125,7 +125,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 data-en="About Me" data-de="Über mich">About Me</h2>
+            <h2><i class="fas fa-user"></i> <span data-en="About Me" data-de="Über mich">About Me</span></h2>
             
             <div class="about-content">
                 <div class="profile-pic">
@@ -184,7 +184,7 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 data-en="My Services" data-de="Meine Dienstleistungen">My Services</h2>
+            <h2><i class="fas fa-layer-group"></i> <span data-en="My Services" data-de="Meine Dienstleistungen">My Services</span></h2>
             <p class="section-subtitle" data-en="Click on the services below for details and licensing info." data-de="Klicken Sie auf die Dienstleistungen für Details und Lizenzinfos.">Click on the services below for details and licensing info.</p>
             <div class="services-grid">
                 <a href="service-1.html" class="service-card" title="View Power Apps Development details">
@@ -200,7 +200,7 @@
                 <a href="service-3.html" class="service-card" title="View SharePoint Services details">
                     <div class="service-icon">📂</div>
                     <h3 data-en="SharePoint Services" data-de="SharePoint Services">SharePoint Services</h3>
-                    <p data-en="Configuration, site design, and governance for modern collaboration spaces." data-de="Konfiguration, Site-Design und Governance für moderne Zusammenarbeitsbereiche.">Configuration, site design, and governance for modern collaboration spaces.</p>
+                    <p data-en="Configuration, site design, and governance for modern collaboration spaces and Power Apps." data-de="Konfiguration, Site-Design und Governance für moderne Zusammenarbeitsbereiche und Power Apps.">Configuration, site design, and governance for modern collaboration spaces and Power Apps.</p>
                 </a>
             </div>
         </div>
@@ -209,7 +209,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 data-en="Projects" data-de="Projekte">Projects</h2>
+            <h2><i class="fas fa-laptop-code"></i> <span data-en="Projects" data-de="Projekte">Projects</span></h2>
             <p class="section-subtitle" data-en="Explore a selection of my recent work. Click below to learn more." data-de="Entdecken Sie eine Auswahl meiner aktuellen Arbeiten. Klicken Sie unten, um mehr zu erfahren.">Explore a selection of my recent work. Click below to learn more.</p>
             <div class="projects-grid">
                 <a href="project-1.html" class="project-card" title="View project details">
@@ -234,7 +234,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 data-en="Contact Form" data-de="Kontaktformular">Contact Form</h2>
+            <h2><i class="fas fa-envelope-open-text"></i> <span data-en="Contact Form" data-de="Kontaktformular">Contact Form</span></h2>
             <p class="section-subtitle" data-en="Ready to start your project?" data-de="Bereit, Ihr Projekt zu starten?">Ready to start your project?</p>
             
             <div id="form-success-message" class="success-message-card">
@@ -264,12 +264,21 @@
             <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
                 <div class="form-checkbox">
-                    <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
-                    <label for="privacy-consent" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-weight: normal;">
-                        <span data-en="I have read and agree to the " data-de="Ich habe die ">I have read and agree to the </span><a href="datenschutz.html" style="color: var(--text-primary); text-decoration: underline;" data-en="Data Privacy Policy" data-de="Datenschutzerklärung">Data Privacy Policy</a><span data-en="." data-de=" gelesen und stimme der Verarbeitung meiner Daten zu.">.</span>
+                    <input type="checkbox" id="send-confirmation" name="send-confirmation">
+                    <label for="send-confirmation" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-weight: normal;">
+                        <span data-en="Send a copy of this message to my inbox" data-de="Eine Kopie der Nachricht an mein Postfach senden">Send a copy of this message to my inbox</span>
                     </label>
                 </div>
-                <button type="submit" class="cta-button" data-en="Send Message" data-de="Nachricht senden">Send Message</button>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
+                    <label for="privacy-consent" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-weight: normal;">
+                        <span data-en="I have read and agree to the " data-de="Ich habe die ">I have read and agree to the </span><a href="datenschutz.html" style="color: var(--text-primary); text-decoration: underline;" data-en="Data Privacy Policy" data-de="Datenschutzerklärung">Data Privacy Policy</a><span data-en="." data-de=" gelesen und stimme der Verarbeitung meiner Daten zu.">.</span><span style="color: #ff4b4b; font-weight: bold;" title="Required field"> *</span>
+                    </label>
+                </div>
+                <button type="submit" class="cta-button">
+                    <i class="fas fa-paper-plane"></i>
+                    <span data-en="Send Message" data-de="Nachricht senden">Send Message</span>
+                </button>
             </form>
         </div>
     </section>
@@ -277,7 +286,7 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 data-en="Frequently Asked Questions" data-de="Häufig gestellte Fragen">Frequently Asked Questions</h2>
+            <h2><i class="fas fa-question-circle"></i> <span data-en="Frequently Asked Questions" data-de="Häufig gestellte Fragen">Frequently Asked Questions</span></h2>
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question">
