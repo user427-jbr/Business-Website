@@ -12,6 +12,9 @@
     --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
     --accent-primary: #01a9a4; /* Main hover highlight */
     --accent-secondary: #018b87; /* Secondary highlight */
+    --bg-base: #ffffff;
+    --bg-dot: #e0e0e0;
+    --bg-glow: radial-gradient(circle at 50% 0%, rgba(1, 169, 164, 0.08) 0%, transparent 70%);
 }
 
 body.dark-mode {
@@ -25,6 +28,9 @@ body.dark-mode {
     --navbar-border: var(--border-color);
     --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     --card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.7);
+    --bg-base: #121212;
+    --bg-dot: #2a2a2a;
+    --bg-glow: radial-gradient(circle at 50% 0%, rgba(1, 169, 164, 0.12) 0%, transparent 70%);
 }
 
 /* Reset and Base Styles */
@@ -46,8 +52,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--bg-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--bg-base);
+    background-image: var(--bg-glow);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .container {
@@ -113,11 +122,6 @@ body {
 
 .logo:hover .logo-image {
     transform: scale(1.05);
-}
-
-body.dark-mode .logo-image,
-body.dark-mode .contact-image {
-    filter: brightness(0) invert(1);
 }
 
 .logo-content {
@@ -399,9 +403,8 @@ body.dark-mode .contact-image {
     flex-direction: column;
     justify-content: center;
     padding: 60px 0;
-    background-color: var(--bg-primary);
+    background: transparent;
     text-align: center;
-    border-top: 1px solid var(--border-color);
 }
 
 .about h2,
@@ -572,8 +575,7 @@ section h2 i {
     flex-direction: column;
     justify-content: center;
     padding: 60px 0;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    background: transparent;
 }
 
 .services-grid {
@@ -646,8 +648,7 @@ section h2 i {
     flex-direction: column;
     justify-content: center;
     padding: 60px 0;
-    background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
+    background: transparent;
 }
 
 .projects-grid {
@@ -705,8 +706,7 @@ section h2 i {
     flex-direction: column;
     justify-content: center;
     padding: 60px 0;
-    background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
+    background: transparent;
 }
 
 .faq h2 {
@@ -801,8 +801,7 @@ section h2 i {
     flex-direction: column;
     padding: 60px 0;
     justify-content: center;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    background: transparent;
     text-align: center;
 }
 
@@ -1500,7 +1499,7 @@ section h2 i {
 /* Project Detail Page Styles */
 .project-detail {
     padding: 60px 0;
-    background-color: var(--bg-secondary);
+    background: transparent;
 }
 
 .back-link {
@@ -1629,8 +1628,7 @@ section h2 i {
 
 .contact-cta {
     padding: 60px 0;
-    background: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
+    background: transparent;
     text-align: center;
 }
 
@@ -1693,7 +1691,7 @@ section h2 i {
 /* Legal Pages Styling */
 .legal-content {
     padding: 80px 0;
-    background-color: var(--bg-secondary);
+    background: transparent;
     color: var(--text-primary);
     min-height: 70vh;
 }
