@@ -1452,6 +1452,11 @@ section h2 i {
         font-size: 0.95rem;
     }
 
+    .certificate-badge {
+        max-width: 270px;
+        margin: 0 auto;
+    }
+
     .services {
         padding: 40px 0;
     }
