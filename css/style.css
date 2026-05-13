@@ -395,6 +395,30 @@ body {
     box-shadow: 0 4px 12px rgba(1, 169, 164, 0.3);
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: slideInUp 0.8s ease;
+}
+
+.hero-buttons .cta-button {
+    flex: 1 1 220px;
+    max-width: 280px;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+}
+
 /* About Section */
 .about {
     min-height: calc(100vh - 70px);
@@ -504,6 +528,8 @@ section h2 i {
 
 .certificate-badge {
     display: flex;
+    flex: 1;
+    max-width: 300px;
     align-items: center;
     gap: 0.6rem;
     padding: 0.5rem 0.8rem;
@@ -525,7 +551,6 @@ section h2 i {
 }
 
 .cert-link-icon {
-    margin-top: 0.5rem;
     font-size: 0.85rem;
     color: var(--text-primary);
     opacity: 0.6;
@@ -544,6 +569,8 @@ section h2 i {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    flex: 1;
+    text-align: center;
 }
 
 .cert-name {
