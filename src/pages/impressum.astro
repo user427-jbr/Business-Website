@@ -1,80 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Legal notice and imprint for Julius Bruch's Power Apps and Microsoft 365 consulting services.">
-    <meta name="robots" content="noindex, follow">
-    <title>Impressum</title>
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="canonical" href="https://jb-solutions.digital/impressum.html">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo" title="Back to home">
-                    <img src="images/logo.png" alt="Julius Bruch Logo" class="logo-image">
-                    <div class="logo-content">
-                        <div class="logo-name">Julius Bruch</div>
-                        <div class="logo-tagline">Digital Solutions</div>
-                    </div>
-                </a>
-                
-                <!-- Hamburger Menu -->
-                <button class="hamburger" id="hamburger" title="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html#about" class="nav-link" data-en="About" data-de="Über mich">About</a></li>
-                    <li><a href="index.html#services" class="nav-link" data-en="Services" data-de="Dienstleistungen">Services</a></li>
-                    <li><a href="index.html#projects" class="nav-link" data-en="Projects" data-de="Projekte">Projects</a></li>
-                    <li><a href="index.html#faq" class="nav-link" data-en="FAQ" data-de="FAQ">FAQ</a></li>
-                    <li><a href="index.html#contact" class="nav-link" data-en="Contact" data-de="Kontakt">Contact</a></li>
-                    <li class="nav-lang-item">
-                        <button class="theme-toggle" id="themeToggleMobile" title="Toggle theme">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <button class="lang-toggle" id="langToggleMobile" title="Toggle language">
-                            <i class="fas fa-globe"></i>
-                        </button>
-                        <select class="lang-switch" id="langSwitchMobile" style="display: none;">
-                            <option value="en">EN</option>
-                            <option value="de">GER</option>
-                        </select>
-                    </li>
-                </ul>
-                
-                <div class="nav-controls">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="lang-toggle" id="langToggle" title="Toggle language">
-                        <i class="fas fa-globe"></i>
-                    </button>
-                    <select class="lang-switch" id="langSwitch" style="display: none;">
-                        <option value="en">EN</option>
-                        <option value="de">GER</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </nav>
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import contactInfoImg from '../assets/images/contact-info.png';
+---
 
-    <!-- Legal Content -->
+<Layout title="Impressum | Julius Bruch Digital Solutions">
+    <main>
+        <!-- Legal Content -->
     <section class="legal-content">
         <div class="container">
-            <a href="index.html" class="back-link">
+            <a href="/" class="back-link">
                 <i class="fas fa-arrow-left"></i>
                 <span data-en="Back to Home" data-de="Zurück zur Startseite">Back to Home</span>
             </a>
@@ -84,7 +19,7 @@
             
             <h3 data-en="Responsible for Content:" data-de="Verantwortlich für den Inhalt:">Responsible for Content:</h3>
             <p>
-                <img src="images/contact-info.png" alt="Contact Information" class="contact-image" style="max-width: 300px; width: 100%; height: auto; margin-top: 10px;">
+                <Image src={contactInfoImg} alt="Contact Information" class="contact-image" style="max-width: 300px; width: 100%; height: auto; margin-top: 10px;" />
             </p>
 
             <h3 data-en="Professional Information:" data-de="Berufliche Informationen:">Professional Information:</h3>
@@ -120,7 +55,7 @@
 
             <h3 data-en="Data Protection:" data-de="Datenschutz:">Data Protection:</h3>
             <p>
-                <span data-en="For information on data protection, please refer to our " data-de="Informationen zum Datenschutz finden Sie in unserer ">For information on data protection, please refer to our </span><a href="datenschutz.html" data-en="Data Privacy Policy" data-de="Datenschutzerklärung">Data Privacy Policy</a><span data-en="." data-de=".">.</span>
+                <span data-en="For information on data protection, please refer to our " data-de="Informationen zum Datenschutz finden Sie in unserer ">For information on data protection, please refer to our </span><a href="/datenschutz" data-en="Data Privacy Policy" data-de="Datenschutzerklärung">Data Privacy Policy</a><span data-en="." data-de=".">.</span>
             </p>
 
             <h3 data-en="Dispute Resolution:" data-de="Streitbeilegung:">Dispute Resolution:</h3>
@@ -130,32 +65,5 @@
             </p>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>
-                        <span data-en="Made with" data-de="Gemacht mit">Made with</span> 
-                        <i class="fas fa-heart" style="color: #ff4b4b;" title="love"></i> 
-                        <span data-en="by me & Gemini Code Assist" data-de="von mir & Gemini Code Assist">by me & Gemini Code Assist</span> 
-                        <i class="fas fa-robot" title="robot"></i>
-                    </p>
-                </div>
-                <div class="footer-center">
-                    <a href="#" class="back-to-top-footer"><span data-en="Top" data-de="Nach oben">Top</span> <i class="fas fa-arrow-up"></i></a>
-                </div>
-                <div class="footer-right">
-                    <div class="footer-links">
-                        <a href="impressum.html" data-en="Impressum" data-de="Impressum">Impressum</a>
-                        <a href="datenschutz.html" data-en="Data Privacy" data-de="Datenschutz">Data Privacy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+    </main>
+</Layout>

@@ -23,10 +23,9 @@ if (heroVideo) {
         const delta = (now - lastTime) / 1000; // Time elapsed in seconds
         lastTime = now;
 
-        // Cap delta in case the user switches tabs to prevent huge jumps
-        if (delta < 0.2) {
-            heroVideo.currentTime -= delta * 0.7;
-        }
+        // Limit max delta to prevent huge jumps if user switches tabs, while still making progress
+        const safeDelta = Math.min(delta, 0.1);
+        heroVideo.currentTime -= safeDelta * 0.7;
 
         if (heroVideo.currentTime <= 0.05) {
             isReversing = false;
@@ -41,13 +40,17 @@ if (heroVideo) {
 // Theme Management
 const body = document.body;
 
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+if (initialTheme === 'dark') {
     body.classList.add('dark-mode');
 }
-updateThemeIcons(savedTheme);
+updateThemeIcons(initialTheme);
 
-function toggleTheme() {
+function toggleTheme(e) {
+    if (e && e.preventDefault) e.preventDefault();
     body.classList.toggle('dark-mode');
     const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme', currentTheme);
@@ -82,7 +85,8 @@ setLanguage(savedLanguage);
 
 // Toggle language switch visibility
 langToggles.forEach((toggle, index) => {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
         const sw = langSwitches[index];
         if (sw) sw.style.display = sw.style.display === 'none' ? 'inline-block' : 'none';
     });
@@ -90,8 +94,17 @@ langToggles.forEach((toggle, index) => {
 
 // Handle language change
 langSwitches.forEach(langSwitch => {
+    // Prevent the click from bubbling up to parent links or document listeners
+    ['click', 'mousedown', 'touchstart'].forEach(eventType => {
+        langSwitch.addEventListener(eventType, (e) => e.stopPropagation());
+    });
+
     langSwitch.addEventListener('change', (e) => {
         const selectedLang = e.target.value;
+        
+        // Remove focus before hiding to prevent browser from snapping scroll to top
+        e.target.blur();
+        
         localStorage.setItem('language', selectedLang);
         setLanguage(selectedLang);
         
@@ -115,6 +128,7 @@ const navMenu = document.getElementById('navMenu');
 
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
@@ -140,9 +154,15 @@ if (hamburger && navMenu) {
 // Smooth scrolling for navigation links with navbar offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') {
+            e.preventDefault(); // Prevent default top jump
+            return; 
+        }
+        
+        const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             const navbar = document.querySelector('.navbar');
             const navbarHeight = navbar ? navbar.offsetHeight : 0;
             const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
@@ -233,7 +253,7 @@ function updateActiveLink() {
     });
     
     // Check if we've scrolled to the very bottom of the page
-    if ((window.innerHeight + Math.ceil(window.scrollY)) >= document.body.offsetHeight - 10) {
+    if ((window.innerHeight + Math.ceil(window.scrollY)) >= document.documentElement.scrollHeight - 10) {
         if (sections.length > 0) {
             current = sections[sections.length - 1].getAttribute('id');
         }
@@ -247,7 +267,16 @@ function updateActiveLink() {
     });
 }
 
-window.addEventListener('scroll', updateActiveLink);
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            updateActiveLink();
+            scrollTimeout = null;
+        }, 50);
+    }
+}, { passive: true });
+
 window.addEventListener('load', updateActiveLink);
 
 // FAQ Accordion
@@ -269,6 +298,34 @@ faqItems.forEach(item => {
     }
 });
 
+// Helper function for Confetti animation
+function triggerConfetti() {
+    // Respect user accessibility preference for reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    function fire() {
+        confetti({
+            particleCount: 120,
+            spread: 80,
+            origin: { y: 0.6 },
+            colors: ['#01a9a4', '#018b87', '#f4f4f4', '#333333'],
+            disableForReducedMotion: true
+        });
+    }
+
+    if (window.confetti) {
+        fire();
+        return;
+    }
+    
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js';
+    script.onload = fire;
+    document.body.appendChild(script);
+}
+
 // Handle Contact Form Submission via AJAX
 const contactForm = document.getElementById('netlify-contact-form');
 const successMessage = document.getElementById('form-success-message');
@@ -285,32 +342,50 @@ if (contactForm && successMessage) {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: urlEncodedData
         })
-        .then(response => {
+        .then(async response => {
             if (response.ok) {
                 const lang = localStorage.getItem('language') || 'en';
                 const sendConfirmation = document.getElementById('send-confirmation');
                 const successHeading = successMessage.querySelector('h3');
                 
+                let enText = 'Message sent successfully!';
+                let deText = 'Nachricht erfolgreich gesendet!';
+
                 // Send confirmation email only if the user checked the option
                 if (sendConfirmation && sendConfirmation.checked) {
-                    fetch('/.netlify/functions/send-email', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            name: formData.get('name'),
-                            email: formData.get('email'),
-                            message: formData.get('message'),
-                            lang: lang
-                        })
-                    }).catch(err => console.error('Failed to trigger email function:', err));
-                    
-                    successHeading.setAttribute('data-en', 'Message sent successfully! A confirmation email has been sent to your inbox.');
-                    successHeading.setAttribute('data-de', 'Nachricht erfolgreich gesendet! Eine Bestätigungs-E-Mail wurde an Ihren Posteingang gesendet.');
-                } else {
-                    successHeading.setAttribute('data-en', 'Message sent successfully!');
-                    successHeading.setAttribute('data-de', 'Nachricht erfolgreich gesendet!');
+                    try {
+                        const emailResponse = await fetch('/.netlify/functions/send-email', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                name: formData.get('name'),
+                                email: formData.get('email'),
+                                message: formData.get('message'),
+                                lang: lang
+                            })
+                        });
+
+                        if (emailResponse.ok) {
+                            enText = 'Message sent successfully! A confirmation email has been sent to your inbox.';
+                            deText = 'Nachricht erfolgreich gesendet! Eine Bestätigungs-E-Mail wurde an Ihren Posteingang gesendet.';
+                        } else {
+                            console.error('Email function returned an error status:', emailResponse.status);
+                            enText = 'Message sent successfully, but we could not send the confirmation email.';
+                            deText = 'Nachricht erfolgreich gesendet, aber die Bestätigungs-E-Mail konnte nicht gesendet werden.';
+                        }
+                    } catch (err) {
+                        console.error('Failed to trigger email function:', err);
+                        enText = 'Message sent successfully, but we could not send the confirmation email.';
+                        deText = 'Nachricht erfolgreich gesendet, aber die Bestätigungs-E-Mail konnte nicht gesendet werden.';
+                    }
                 }
-                successHeading.textContent = lang === 'en' ? successHeading.getAttribute('data-en') : successHeading.getAttribute('data-de');
+
+                successHeading.setAttribute('data-en', enText);
+                successHeading.setAttribute('data-de', deText);
+                successHeading.textContent = lang === 'en' ? enText : deText;
+
+                // Trigger confetti animation!
+                triggerConfetti();
 
                 // Show success message with animation
                 successMessage.style.display = 'flex'; // Make it visible for animation

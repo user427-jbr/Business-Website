@@ -1,21 +1,51 @@
-# Julius Bruch Digital Solutions
+# Julius Bruch | Digital Solutions
 
-A modern, responsive portfolio website for Julius Bruch, showcasing Power Apps, Power Automate, and SharePoint services built with HTML, CSS, and JavaScript.
+A modern, highly-optimized portfolio website built with [Astro](https://astro.build/) for Julius Bruch. This platform showcases professional freelance services surrounding **Microsoft 365, Power Apps, Power Automate, and SharePoint**. 
+
+The site features a custom dark/light mode, internationalization (English/German), an interactive portfolio, and a fully functional serverless contact form processed via Netlify and Resend.
+
+---
+
+## 🚀 Features
+
+- **Blazing Fast Performance**: Built using Astro with vanilla HTML, CSS, and JavaScript. Zero heavy frontend frameworks.
+- **Light & Dark Mode**: Seamless theme toggling that automatically respects system preferences and persists via `localStorage`.
+- **Internationalization (i18n)**: Instant, zero-reload language switching between English and German.
+- **Serverless Contact Form**: Form submissions are securely processed through Netlify Forms, combined with a Netlify Function (`send-email.js`) that integrates with the Resend API to send automated email confirmations to clients.
+- **Responsive & Accessible**: Mobile-first CSS structure. Semantic HTML elements and accessibility-first animations (respects `prefers-reduced-motion`).
+- **GDPR Compliant**: Includes dedicated Legal (Impressum) and Data Privacy (Datenschutz) pages with fully compliant cookie-less analytics via Simple Analytics.
+- **SEO Optimized**: Complete with metadata, Open Graph (OG) tags, Twitter cards, and structured JSON-LD schema data.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Astro
+- **Styling:** Vanilla CSS with CSS Custom Properties (Variables)
+- **Scripting:** Vanilla JavaScript (Intersection Observers, LocalStorage, Fetch API)
+- **Hosting / Infrastructure:** Netlify
+- **Form Handling:** Netlify Forms
+- **Transactional Emails:** Resend API + Netlify Serverless Functions
+- **Icons:** FontAwesome
 
 ## Project Structure
 
-```
+```text
 Business-Website/
-├── index.html           # Main HTML file
-├── impressum.html       # Legal impressum page
-├── datenschutz.html     # GDPR Data Privacy page
-├── css/
-│   └── style.css       # Main stylesheet with dark mode support
-├── js/
-│   └── script.js       # JavaScript with theme & language switching
-├── images/             # Image assets
-├── assets/             # Other static assets
-└── README.md           # This file
+├── netlify/
+│   └── functions/
+│       └── send-email.js     # Serverless backend function for Resend emails
+├── public/                   # Static assets (Favicons, Minified CSS)
+├── src/
+│   ├── assets/               # Images and Video assets (optimized by Astro)
+│   ├── components/           # Reusable Astro UI components (Header, Footer, Cards)
+│   ├── css/                  # Global CSS and theming
+│   ├── js/                   # Global Client-side JavaScript
+│   ├── layouts/              # Main HTML layouts/wrappers
+│   └── pages/                # Astro page routes (Index, Impressum, Datenschutz, Projects)
+├── netlify.toml              # Netlify Deployment Configuration
+├── package.json              # Node Dependencies
+└── astro.config.mjs          # Astro Configuration
 ```
 
 ## Features
@@ -46,12 +76,13 @@ Business-Website/
 
 ## Getting Started
 
-1. Open `index.html` in your web browser
-2. Customize the content:
+1. Run `npm install` to install dependencies
+2. Run `npm run dev` to start the Astro development server
+3. Customize the content:
    - Update your name/branding in the navigation logo
    - Replace email addresses with your actual contact email
    - Update social media links (LinkedIn, GitHub, YouTube)
-   - Add a professional photo to the `images/` folder
+   - Add a professional photo to the `public/images/` folder
    - Update the About section with your background
    - Customize sample projects
    - Update contact information
@@ -71,14 +102,7 @@ Replace all instances of `info@jb-solutions.digital` with your real email addres
 - `datenschutz.html` - Contact details
 
 ### Update Social Links
-In `index.html`, update the social links section:
-
-```html
-<a href="https://www.linkedin.com/in/julius-bruch-054296294" target="_blank" title="LinkedIn">
-<a href="https://github.com/yourprofile" target="_blank" title="GitHub">
-<a href="https://youtube.com/@yourprofile" target="_blank" title="YouTube">
-<a href="mailto:info@jb-solutions.digital" title="Email">
-```
+In `index.html`, update the social links section.
 
 ### Dark Mode & Language Switching
 
@@ -93,7 +117,7 @@ All text with `data-en` and `data-de` attributes will automatically switch with 
 
 To add another language (e.g., French):
 
-1. Add option to language switcher in `index.html`:
+1. Add option to language switcher in `src/pages/index.astro`:
 ```html
 <option value="fr">Français</option>
 ```
@@ -194,7 +218,7 @@ Ready to deploy? Popular options include:
 
 - **localStorage**: Used to store theme preference and language selection
 - **Intersection Observer**: Used for scroll animations (no heavy libraries)
-- **No external dependencies**: Vanilla JavaScript only (FontAwesome via CDN for icons)
+- **No external dependencies**: Vanilla JavaScript only. FontAwesome icons are locally hosted for strict privacy and GDPR compliance.
 - **Lightweight**: Fast loading times
 
 ## SEO Best Practices
@@ -234,7 +258,7 @@ Ready to deploy? Popular options include:
 - Verify `css/style.css` is loaded in HTML head
 
 ### Social Links Not Appearing
-- Check FontAwesome CDN link in HTML head is correct
+- Check that the locally hosted FontAwesome CSS is properly linked in the HTML head (`Layout.astro`)
 - Verify social link URLs are properly formatted
 - Open browser console to check for any loading errors
 

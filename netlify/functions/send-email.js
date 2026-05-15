@@ -26,6 +26,7 @@ exports.handler = async function(event) {
         const emailData = {
             from: 'Julius Bruch <info@jb-solutions.digital>', 
             to: email, // Geht an die E-Mail des Nutzers, der das Formular ausgefüllt hat
+            reply_to: 'info@jb-solutions.digital',
             subject: subjectText,
             html: `
                 <div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #333333; max-width: 600px; padding: 20px;">

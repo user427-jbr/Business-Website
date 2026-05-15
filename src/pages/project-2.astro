@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import calendarAppImg from '../assets/images/calendar-app-screenshot.png';
+---
+
+<Layout 
+    title="Calendar Export App | Julius Bruch"
+    description="Case Study: Calendar Export App. Power App to retrieve, filter, and export Outlook calendar events to CSV format via Microsoft Graph API integration."
+>
+    <main>
+        <!-- Project Detail Section -->
+        <section class="project-detail">
+            <div class="container">
+                <a href="/#projects" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-en="Back to Projects" data-de="Zurück zu Projekte">Back to Projects</span>
+                </a>
+
+                <div class="project-detail-content">
+                    <div class="project-detail-header">
+                        <h1 data-en="Calendar Export App" data-de="Kalender Export App">Calendar Export App</h1>
+                        <p class="project-category" data-en="Power Apps | Outlook Integration | CSV Export" data-de="Power Apps | Outlook Integration | CSV Export">Power Apps | Outlook Integration | CSV Export</p>
+                    </div>
+
+                    <div class="project-detail-image">
+                        <Image src={calendarAppImg} alt="Calendar Export App Horizontal Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="project-detail-body">
+                        <h2 data-en="Project Overview" data-de="Projektübersicht">Project Overview</h2>
+                        <p data-en="Power App to retrieve, filter, and export Outlook calendar events to CSV format via Microsoft Graph API integration." data-de="Power App zum Abrufen, Filtern und Exportieren von Outlook-Kalenderterminen ins CSV-Format über die Microsoft Graph API-Integration.">Power App to retrieve, filter, and export Outlook calendar events to CSV format via Microsoft Graph API integration.</p>
+
+                        <h2 data-en="Key Features" data-de="Hauptfunktionen">Key Features</h2>
+                        <ul class="features-list">
+                            <li data-en="Direct integration with Microsoft Graph API for calendar data" data-de="Direkte Integration mit Microsoft Graph API für Kalenderdaten">Direct integration with Microsoft Graph API for calendar data</li>
+                            <li data-en="Advanced search functionality by title, description, and location" data-de="Erweiterte Suchfunktion nach Titel, Beschreibung und Ort">Advanced search functionality by title, description, and location</li>
+                            <li data-en="CSV export with customizable date ranges" data-de="CSV-Export mit anpassbaren Datumsbereichen">CSV export with customizable date ranges</li>
+                            <li data-en="Filter events by category, organizer, and attendees" data-de="Ereignisse nach Kategorie, Organisator und Teilnehmern filtern">Filter events by category, organizer, and attendees</li>
+                            <li data-en="Real-time calendar sync" data-de="Echtzeit-Kalendersynchronisierung">Real-time calendar sync</li>
+                            <li data-en="User-friendly interface with keyboard shortcuts" data-de="Benutzerfreundliche Schnittstelle mit Tastaturkürzeln">User-friendly interface with keyboard shortcuts</li>
+                        </ul>
+
+                        <h2 data-en="Technologies Used" data-de="Verwendete Technologien">Technologies Used</h2>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Power Apps</span>
+                            <span class="tech-tag">Microsoft Graph</span>
+                            <span class="tech-tag">Outlook</span>
+                            <span class="tech-tag">Power Automate</span>
+                        </div>
+
+                        <h2 data-en="Results" data-de="Ergebnisse">Results</h2>
+                        <p data-en="Users can now analyze calendar data for productivity tracking, meeting management, and resource planning. The app has saved teams an average of 5 hours per month in manual calendar data entry and reporting tasks." data-de="Benutzer können nun Kalenderdaten für Produktivitätsverfolgung, Besprechungsverwaltung und Ressourcenplanung analysieren. Die App hat Teams durchschnittlich 5 Stunden pro Monat bei manuellen Kalender-Dateneingabe- und Berichtsaufgaben gespart.">Users can now analyze calendar data for productivity tracking, meeting management, and resource planning. The app has saved teams an average of 5 hours per month in manual calendar data entry and reporting tasks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2 data-en="Need a custom Power App?" data-de="Benötigen Sie eine benutzerdefinierte Power App?">Need a custom Power App?</h2>
+                <p data-en="Let's build a solution that integrates seamlessly with your Microsoft 365 environment." data-de="Lassen Sie uns eine Lösung entwickeln, die sich nahtlos in Ihre Microsoft 365-Umgebung integriert.">Let's build a solution that integrates seamlessly with your Microsoft 365 environment.</p>
+                <a href="/#contact" class="cta-button" data-en="Get in Touch" data-de="Kontaktieren Sie mich">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+</Layout>

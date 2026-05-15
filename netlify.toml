@@ -1,14 +1,10 @@
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
+[build]
+  # The npm command to build the Astro site
+  command = "npm run build"
+  # The directory where Astro outputs the compiled static site
+  publish = "dist"
+  # The directory where Netlify functions (like the Resend email script) are stored
+  functions = "netlify/functions"
 
-  [plugins.inputs]
-    buildDir = "."
-    exclude = [
-      "./impressum.html",
-      "./datenschutz.html"
-    ]
-
-[[plugins]]
-  package = "netlify-plugin-submit-sitemap"
-  [plugins.inputs]
-    sitemapPath = "/sitemap.xml"
+[functions]
+  node_bundler = "esbuild"

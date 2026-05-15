@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import projectAppImg from '../assets/images/project-management-app.png';
+---
+
+<Layout 
+    title="Project Management App Portfolio Project | Julius Bruch"
+    description="Case Study: Project Management App. Central dashboard connected to SharePoint for efficient project tracking, milestone management, and team collaboration."
+>
+    <main>
+        <!-- Project Detail Section -->
+        <section class="project-detail">
+            <div class="container">
+                <a href="/#projects" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-en="Back to Projects" data-de="Zurück zu Projekte">Back to Projects</span>
+                </a>
+
+                <div class="project-detail-content">
+                    <div class="project-detail-header">
+                        <h1 data-en="Project Management App" data-de="Projektmanagement App">Project Management App</h1>
+                        <p class="project-category" data-en="Power Apps | SharePoint Lists | Document Library" data-de="Power Apps | SharePoint Listen | Dokumentenbibliothek">Power Apps | SharePoint Lists | Document Library</p>
+                    </div>
+
+                    <div class="project-detail-image">
+                        <Image src={projectAppImg} alt="Project Management App Screenshot" class="project-screenshot" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="project-detail-body">
+                        <h2 data-en="Project Overview" data-de="Projektübersicht">Project Overview</h2>
+                        <p data-en="Central dashboard connected to SharePoint for efficient project tracking, milestone management, and team collaboration." data-de="Zentrales Dashboard, verbunden mit SharePoint, für effiziente Projektverfolgung, Meilensteinverwaltung und Teamzusammenarbeit.">Central dashboard connected to SharePoint for efficient project tracking, milestone management, and team collaboration.</p>
+
+                        <h2 data-en="Key Features" data-de="Hauptfunktionen">Key Features</h2>
+                        <ul class="features-list">
+                            <li data-en="Centralized dashboard for project overview" data-de="Zentrales Dashboard für den Projektüberblick">Centralized dashboard for project overview</li>
+                            <li data-en="Integration with multiple SharePoint lists for tasks and milestones" data-de="Integration mit mehreren SharePoint-Listen für Aufgaben und Meilensteine">Integration with multiple SharePoint lists for tasks and milestones</li>
+                            <li data-en="Direct access and management of a SharePoint Document Library" data-de="Direkter Zugriff und Verwaltung einer SharePoint-Dokumentenbibliothek">Direct access and management of a SharePoint Document Library</li>
+                            <li data-en="Real-time project status tracking and reporting" data-de="Echtzeit-Verfolgung und Berichterstattung des Projektstatus">Real-time project status tracking and reporting</li>
+                            <li data-en="Role-based access control for team members and managers" data-de="Rollenbasierte Zugriffskontrolle für Teammitglieder und Manager">Role-based access control for team members and managers</li>
+                            <li data-en="Cross-filtering and search capabilities across multiple data sources" data-de="Kreuzfilter- und Suchfunktionen über mehrere Datenquellen hinweg">Cross-filtering and search capabilities across multiple data sources</li>
+                        </ul>
+
+                        <h2 data-en="Technologies Used" data-de="Verwendete Technologien">Technologies Used</h2>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Power Apps</span>
+                            <span class="tech-tag">SharePoint Online</span>
+                            <span class="tech-tag">SharePoint Lists</span>
+                            <span class="tech-tag">Document Library</span>
+                        </div>
+
+                        <h2 data-en="Results" data-de="Ergebnisse">Results</h2>
+                        <p data-en="Teams now manage all project-related data and files from a single interface. The solution improved data consistency, eliminated scattered Excel trackers, and significantly boosted team collaboration and project visibility." data-de="Teams verwalten nun alle projektbezogenen Daten und Dateien über eine einzige Benutzeroberfläche. Die Lösung verbesserte die Datenkonsistenz, eliminierte verstreute Excel-Tracker und steigerte die Teamzusammenarbeit und Projektsichtbarkeit erheblich.">Teams now manage all project-related data and files from a single interface. The solution improved data consistency, eliminated scattered Excel trackers, and significantly boosted team collaboration and project visibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2 data-en="Need a central dashboard for your data?" data-de="Benötigen Sie ein zentrales Dashboard für Ihre Daten?">Need a central dashboard for your data?</h2>
+                <p data-en="Let's build a unified app to bring all your SharePoint lists and libraries together." data-de="Lassen Sie uns eine einheitliche App entwickeln, um all Ihre SharePoint-Listen und Bibliotheken zusammenzuführen.">Let's build a unified app to bring all your SharePoint lists and libraries together.</p>
+                <a href="/#contact" class="cta-button" data-en="Get in Touch" data-de="Kontaktieren Sie mich">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+</Layout>

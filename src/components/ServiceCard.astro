@@ -1,0 +1,18 @@
+---
+export interface Props {
+    href: string;
+    title: string;
+    icon: string;
+    titleEn: string;
+    titleDe: string;
+    descEn: string;
+    descDe: string;
+}
+
+const { href, title, icon, titleEn, titleDe, descEn, descDe } = Astro.props;
+---
+<a href={href} class="service-card" title={title}>
+    <div class="service-icon">{icon}</div>
+    <h3 data-en={titleEn} data-de={titleDe}>{titleEn}</h3>
+    <p data-en={descEn} data-de={descDe}>{descEn}</p>
+</a>
